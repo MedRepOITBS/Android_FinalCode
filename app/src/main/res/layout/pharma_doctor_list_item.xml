@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/listitemback">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/create_appointment_text_siize"
+        android:maxLines="1"
+        android:layout_marginLeft="@dimen/contvt_app_marg"
+        android:layout_marginTop="@dimen/contvt_app_marg"
+        android:textColor="@android:color/black"
+        android:text="Meeting with " />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:maxLines="1"
+        android:layout_marginLeft="@dimen/contvt_app_marg"
+        android:layout_marginBottom="@dimen/contvt_app_marg"
+        android:textColor="@color/pharma_list_item_light_black"
+        android:text="therap "
+        android:id="@+id/tv_timing" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/contvt_app_marg"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:text="location"
+        android:maxLines="1"
+        android:visibility="gone"
+        android:textColor="@color/pharma_list_item_light_black"
+        android:id="@+id/location_tv" />
+
+
+    </LinearLayout>
+    <!--<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/contvt_app_marg"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_dialog_info"
+        android:id="@+id/pharma_profilepic" />-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <com.app.util.RoundedImageView
+        android:id="@+id/pharma_profilepic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/contvt_app_marg"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_dialog_info"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

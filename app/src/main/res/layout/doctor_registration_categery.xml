@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="medrep.medrep.RegisterCategoryActivity">
+
+    <FrameLayout android:id="@+id/register_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/register_bg">
+
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+       >
+
+    <ImageView android:id="@+id/medrep_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/logo_regester"
+
+        android:layout_marginTop="30dp"
+        />
+
+    <LinearLayout android:id="@+id/register_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="@dimen/activity_register_margin"
+        android:layout_marginRight="@dimen/activity_register_margin"
+        android:layout_below="@+id/medrep_textview"
+        android:orientation="vertical"
+        android:background="@color/home_button_text">
+
+        <TextView android:id="@+id/register_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:textSize="22dp"
+            android:textColor="@color/register_color"
+            android:text="@string/register_category"/>
+
+        <RadioGroup android:id="@+id/category_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp">
+
+            <RadioButton android:id="@+id/doctorRadioButton"
+                style="@style/MyRadioButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+
+                android:textSize="20sp"
+                android:textColor="@color/register_color"
+                android:text="@string/doctor"/>
+
+            <RadioButton android:id="@+id/companyRadioButton"
+                android:layout_width="match_parent"
+                style="@style/MyRadioButtonStyle"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/register_color"
+                android:text="@string/company"/>
+
+            <RadioButton android:id="@+id/pharmacyRadioButton"
+                android:layout_width="match_parent"
+                style="@style/MyRadioButtonStyle"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/register_color"
+                android:padding="10dp"
+                android:text="@string/pharmacy"/>
+
+            <RadioButton android:id="@+id/patientRadioButton"
+                android:layout_width="match_parent"
+                style="@style/MyRadioButtonStyle"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/register_color"
+                android:text="@string/patient"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_layout"
+        android:layout_margin="@dimen/activity_register_margin"
+        layout="@layout/reg_button" />
+
+
+</RelativeLayout>
+
+
+        </ScrollView>
+    </RelativeLayout>

@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:top="-1dp"
+        android:bottom="-1dp"
+        android:left="-1dp">
+        <shape>
+            <solid android:color="@color/home_button"></solid>
+
+            <stroke
+                android:width="2dp"
+                android:color="#30000000"/>
+        </shape>
+    </item>
+
+</layer-list>

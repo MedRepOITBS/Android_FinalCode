@@ -1,0 +1,200 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE" >
+
+    <!--
+         <include
+        android:id="@+id/notification_header"
+          android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_header_height"
+        layout="@layout/doc_notifiaction_header" />
+    -->
+
+    <RelativeLayout
+        android:id="@+id/lin_back"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_header_height"
+        android:background="@color/notification_header_color" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@drawable/back_icon"
+            android:drawablePadding="5dp"
+android:gravity="fill_vertical"
+            android:singleLine="true"
+            android:text="Appointment Details"
+            android:textColor="@color/tect_color_white"
+            android:textSize="@dimen/notification_header_text_size" />
+    </RelativeLayout>
+
+    <!--<Button
+        android:id="@+id/Schedule_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/home_button"
+        android:text="SCHEDULE"
+        android:textColor="@color/home_button_text" />
+-->
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/Schedule_button"
+        android:layout_below="@id/lin_back"
+        android:layout_margin="10dp" >
+
+        <TextView
+            android:id="@+id/time_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/create_appointment_margin"
+            android:layout_marginRight="@dimen/create_appointment_margin"
+            android:drawableLeft="@mipmap/time_icon"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:text="Time:"
+            android:textSize="@dimen/create_appointment_text_siize_header"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/time_set_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/time_textView"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:text="7:00 am"
+            android:textSize="@dimen/create_appointment_text_siize_header"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/date_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time_textView"
+            android:layout_marginLeft="@dimen/create_appointment_margin"
+            android:layout_marginRight="@dimen/create_appointment_margin"
+            android:drawableLeft="@mipmap/calender"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:text="Date:"
+            android:textSize="@dimen/create_appointment_text_siize_header"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/date_set_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time_textView"
+            android:layout_toRightOf="@id/date_textView"
+            android:drawablePadding="10dp"
+      
+            android:singleLine="true"
+            android:text="7:00 am"
+            android:textSize="@dimen/create_appointment_text_siize_header"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/location_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/date_set_textView"
+            android:layout_marginLeft="@dimen/create_appointment_margin"
+            android:layout_marginRight="@dimen/create_appointment_margin"
+            android:drawableLeft="@mipmap/navigation"
+            android:drawablePadding="@dimen/create_appointment_drabale_padding"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:text="Location:"
+            android:textSize="@dimen/create_appointment_text_siize_header"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/locaton_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/location_details"
+            android:layout_marginLeft="@dimen/create_appointment_margin"
+            android:layout_marginRight="@dimen/create_appointment_margin"
+            android:paddingLeft="@dimen/create_appointment_text_padding"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:text="Yoshoda Hospatals"
+            android:textSize="@dimen/create_appointment_text_siize" />
+
+        <TextView
+            android:id="@+id/Company_name_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/locaton_name"
+            android:layout_marginLeft="@dimen/create_appointment_margin"
+            android:layout_marginRight="@dimen/create_appointment_margin"
+            android:drawableLeft="@mipmap/company_icon"
+            android:drawablePadding="@dimen/create_appointment_drabale_padding"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:text="Company Name:"
+            android:textSize="@dimen/create_appointment_text_siize_header"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/Company_name_heading"
+            android:layout_marginLeft="@dimen/create_appointment_margin"
+            android:layout_marginRight="@dimen/create_appointment_margin"
+            android:paddingLeft="@dimen/create_appointment_text_padding"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:text="Ranbaxy pvt LTD"
+            android:textSize="@dimen/create_appointment_text_siize" />
+
+        <TextView
+            android:id="@+id/drug_name_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/company_name"
+            android:layout_marginLeft="@dimen/create_appointment_margin"
+            android:layout_marginRight="@dimen/create_appointment_margin"
+            android:drawableLeft="@mipmap/company_icon"
+            android:drawablePadding="@dimen/create_appointment_drabale_padding"
+            android:paddingTop="15dp"
+            android:singleLine="true"
+            android:text="Pharmaceutical Company:"
+            android:textSize="@dimen/create_appointment_text_siize_header"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/drug_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/drug_nam_heading"
+            android:layout_marginLeft="@dimen/create_appointment_margin"
+            android:layout_marginRight="@dimen/create_appointment_margin"
+            android:paddingLeft="@dimen/create_appointment_text_padding"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:text="Paracatamal"
+            android:textSize="@dimen/create_appointment_text_siize" />
+    </RelativeLayout>-->
+
+    <ListView android:id="@+id/listview"
+        android:layout_width="match_parent"
+
+        android:layout_below="@id/lin_back"
+        android:layout_height="wrap_content"></ListView>
+
+</RelativeLayout>

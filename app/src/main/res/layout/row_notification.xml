@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@mipmap/transperent_bg"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/ticket_id"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/ticket_bg_shape"
+        android:gravity="center"
+        android:maxLength="1"
+        android:layout_gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:padding="5dp" >
+            <TextView
+                android:id="@+id/notification_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/notification_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/notification_title"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:maxLines="2"
+                android:text="This is test descrip "
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/download"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/requestreport"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/rightArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_tendp"
+        android:src="@mipmap/right_arrow"
+        android:visibility="gone"/>
+</LinearLayout>
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@mipmap/transperent_bg"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/title_tv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+
+        <!--/>-->
+
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginRight="@dimen/margin_tendp"-->
+        <!--android:src="@mipmap/right_arrow" />-->
+
+<!--</RelativeLayout>-->

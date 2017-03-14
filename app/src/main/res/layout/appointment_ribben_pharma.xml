@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_small"
+    android:layout_marginRight="@dimen/margin_small"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/dashboardbox_shape">
+
+        <RelativeLayout
+            android:id="@+id/ll_getAppaointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="60dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MR.ALEX"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/name_designation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:text="appotment title"
+                android:layout_below="@+id/name"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/margin_tendp" />
+            <!--<TextView-->
+                <!--android:id="@+id/repname"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:singleLine="true"-->
+                <!--android:text="repname"-->
+                <!--android:paddingBottom="2dp"-->
+                <!--android:layout_below="@+id/name_designation"-->
+                <!--android:textColor="@color/home_button"-->
+                <!--android:layout_marginLeft="@dimen/margin_small"-->
+                <!--android:layout_marginRight="@dimen/margin_small"-->
+                <!--android:textSize="@dimen/margin_tendp" />-->
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/month_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="AUG"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:singleLine="true"
+                android:text="03"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#0bbfb6"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+

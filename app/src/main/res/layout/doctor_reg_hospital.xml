@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<EditText android:id="@+id/edittext_address_one"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/home_button_text"
+        android:hint="@string/address_line_1_hint"
+        android:textColor="#000000"
+
+        android:singleLine="true"
+        android:layout_height="wrap_content" />
+
+    <EditText android:id="@+id/edittext_address_two"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/home_button_text"
+        android:hint="@string/address_line_2_hint"
+        android:singleLine="true"
+
+        android:textColor="#000000"
+        android:layout_height="wrap_content" />
+
+
+
+    <EditText android:id="@+id/edittext_state"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/home_button_text"
+        android:textColor="#000000"
+        android:singleLine="true"
+
+        android:hint="@string/state_hint"
+        android:layout_height="wrap_content" />
+
+    <EditText android:id="@+id/edittext_city"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/home_button_text"
+        android:hint="@string/city_hint"
+
+        android:textColor="#000000"
+        android:layout_height="wrap_content" />
+
+    <EditText android:id="@+id/edittext_zipcode"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/home_button_text"
+        android:textColor="#000000"
+        android:singleLine="true"
+
+        android:hint="@string/zipcode_hint"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/add_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/add_icon"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:text="Add Another Address"/>-->
+    <LinearLayout android:id="@+id/add_address_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    </LinearLayout>
+
+    <TextView android:id="@+id/addAddressTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:padding="@dimen/reg_margin"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/home_button_text"
+        android:text="@string/add_address"/>
+
+    <!--<Button android:id="@+id/signButton" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/home_button"
+        android:textColor="@color/home_button_text"
+        android:layout_marginTop="20dp"
+        android:text="@string/next" />-->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/reg_button" />
+
+</LinearLayout>
+    </ScrollView>

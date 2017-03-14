@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@color/link_text_material_light">
+
+
+    <RelativeLayout
+        android:id="@+id/ima"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        >
+    <ImageView
+        android:id="@+id/imageDialog"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/playstore_icon"
+android:layout_centerVertical="true"
+
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/textDialog"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
+        android:layout_toRightOf="@+id/imageDialog"
+        android:layout_toEndOf="@+id/imageDialog"
+     />
+
+    </RelativeLayout>
+    <include
+        android:layout_below="@id/ima"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        layout="@layout/reg_button" />
+
+    <Button android:layout_height="wrap_content"
+        android:id="@+id/ok"
+        android:text="Okay"
+        android:layout_alignParentBottom="true"
+        android:background="@color/home_button"
+        android:textColor="@color/home_button_text"
+        android:layout_width="match_parent"
+  android:visibility="gone"
+          />
+
+</RelativeLayout>

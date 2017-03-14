@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_weight="1"
+    android:minWidth="@dimen/dialog_minwidth"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/popup_titlebg"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/feedbacldialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/remindme"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_tendp1"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical" >
+
+                <RadioButton
+                    android:id="@+id/rb_1day"
+                    android:layout_margin="@dimen/margin_small"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:button="@drawable/radiobutton_selector"
+                    android:text="@string/in_oneday"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/activity_vertical_margin" />
+
+                <RadioButton
+                    android:id="@+id/rb_1week"
+                    android:layout_margin="@dimen/margin_small"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:button="@drawable/radiobutton_selector"
+                    android:text="@string/in_oneweek"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/activity_vertical_margin" />
+
+                <RadioButton
+                    android:id="@+id/rb_1month"
+                    android:layout_margin="@dimen/margin_small"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:button="@drawable/radiobutton_selector"
+                    android:text="@string/in_onemonth"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/activity_vertical_margin" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_tendp1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/bt_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_small"
+            android:layout_weight="1.5"
+            android:background="@color/home_button"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/ok"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/activity_vertical_margin"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

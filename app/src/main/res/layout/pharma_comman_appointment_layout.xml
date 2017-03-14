@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@mipmap/callmedrepbg"
+
+            android:id="@+id/switchlayout">
+
+
+            <!--<com.app.util.RoundedImageView-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="90dp"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_marginLeft="5dp"-->
+
+
+                <!--android:layout_centerVertical="true"-->
+                <!--android:src="@drawable/user_icon192_192"-->
+                <!--android:id="@+id/pharma_profilepic" />-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/create_appointment_margin">
+
+                <TextView
+                    android:id="@+id/doctor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tendp1"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:layout_marginRight="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Dr Milan "
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:textSize="30dp"
+                    android:textColor="@color/tect_color_white" />
+                <TextView
+                    android:id="@+id/terapatic_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:layout_marginRight="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/doctor_name"
+                    android:text="Diabetician "
+                    android:singleLine="true"
+                    android:textSize="20dp"
+                    android:textColor="@color/tect_color_white" />
+                <TextView
+                    android:id="@+id/month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tendp1"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:text="DEC "
+                    android:singleLine="true"
+                    android:layout_alignParentRight="true"
+                    android:textSize="35dp"
+                    android:textColor="@color/tect_color_white"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:textStyle="bold"
+                    android:layout_below="@id/month"
+                    android:text="09"
+                    android:textColor="@color/pharma_actscor_blue03"
+                    android:singleLine="true"
+                    android:layout_alignParentRight="true"
+                    android:textSize="35dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_tendp"
+                android:orientation="vertical">
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/app_loy"
+                    android:background="@drawable/profile_background_shape"
+
+                    android:layout_marginTop="@dimen/margintendp"
+
+
+                    >
+
+                    <TextView
+                        android:id="@+id/appointment_hdr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="@dimen/margintendp"
+                        android:layout_marginTop="@dimen/margintendp"
+                        android:drawableLeft="@mipmap/p_clock_icon"
+                        android:drawablePadding="@dimen/create_appointment_drabale_padding"
+
+                        android:layout_marginLeft="@dimen/create_appointment_margin"
+                        android:layout_marginRight="@dimen/create_appointment_margin"
+                        android:layout_alignParentLeft="true"
+                        android:text="Time: "
+                        android:singleLine="true"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/docchain_text"
+                        android:textColor="@color/home_button"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/appointment_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/appointment_hdr"
+                        android:layout_centerVertical="true"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/margintendp"
+                        android:layout_marginBottom="@dimen/margintendp"
+                        android:layout_marginTop="@dimen/margintendp"
+
+                        android:layout_marginRight="@dimen/margintendp"
+                        android:text="6:30PM"
+                        android:textColor="@color/silver"
+                        android:singleLine="true"
+                        android:textSize="@dimen/docchain_text" />
+
+
+                </RelativeLayout>
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/layo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/app_loy"
+                    android:background="@drawable/profile_background_shape"
+                    android:layout_marginTop="@dimen/margintendp"
+
+
+                    >
+
+                    <TextView
+                        android:id="@+id/Location_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_tendp1"
+                        android:layout_marginLeft="@dimen/create_appointment_margin"
+                        android:layout_marginRight="@dimen/create_appointment_margin"
+                        android:layout_alignParentLeft="true"
+                        android:text="Location "
+                        android:drawableLeft="@mipmap/location_icon"
+                        android:drawablePadding="@dimen/create_appointment_drabale_padding"
+                        android:singleLine="true"
+                        android:textSize="@dimen/docchain_text"
+                        android:textColor="@color/home_button"
+                        android:textStyle="bold"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/location_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/create_appointment_text_padding"
+
+
+                        android:layout_marginLeft="@dimen/create_appointment_margin"
+                        android:layout_marginRight="@dimen/create_appointment_margin"
+
+                        android:layout_below="@id/Location_heading"
+                        android:text=""
+                        android:textColor="@color/silver"
+                  android:maxLines="2"
+                        android:textSize="@dimen/docchain_text" />
+
+
+
+
+                    <TextView
+                        android:id="@+id/company_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/location_name"
+                        android:layout_marginTop="@dimen/margin_tendp1"
+                        android:layout_marginLeft="@dimen/create_appointment_margin"
+                        android:layout_marginRight="@dimen/create_appointment_margin"
+
+                        android:text="Company:"
+                        android:drawableLeft="@mipmap/company_icon"
+                        android:drawablePadding="@dimen/create_appointment_drabale_padding"
+
+                        android:textColor="@color/home_button"
+                        android:singleLine="true"
+                        android:textSize="@dimen/docchain_text" />
+
+                    <TextView
+                        android:id="@+id/company_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ranbaxy"
+                        android:layout_below="@id/company_heading"
+                        android:textColor="@color/silver"
+                        android:layout_marginLeft="@dimen/create_appointment_margin"
+                        android:layout_marginRight="@dimen/create_appointment_margin"
+                        android:paddingLeft="@dimen/create_appointment_text_padding"
+
+                        android:singleLine="true"
+                        android:textSize="@dimen/docchain_text" />
+
+
+
+                    <TextView
+                        android:id="@+id/drug_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/company_name"
+                        android:layout_marginTop="@dimen/margin_tendp1"
+                        android:layout_marginLeft="@dimen/create_appointment_margin"
+                        android:layout_marginRight="@dimen/create_appointment_margin"
+
+                        android:text="Drug Requested:"
+                        android:drawableLeft="@mipmap/drug_icon"
+                        android:drawablePadding="@dimen/create_appointment_drabale_padding"
+
+                        android:textColor="@color/home_button"
+                        android:singleLine="true"
+                        android:textSize="@dimen/docchain_text" />
+
+                    <TextView
+                        android:id="@+id/drug_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Disprin R"
+                        android:layout_below="@id/drug_heading"
+                        android:textColor="@color/silver"
+                        android:layout_marginBottom="@dimen/margin_tendp1"
+                        android:paddingLeft="@dimen/create_appointment_text_padding"
+
+                        android:layout_marginLeft="@dimen/create_appointment_margin"
+                        android:layout_marginRight="@dimen/create_appointment_margin"
+                        android:singleLine="true"
+                        android:textSize="@dimen/docchain_text" />
+
+
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

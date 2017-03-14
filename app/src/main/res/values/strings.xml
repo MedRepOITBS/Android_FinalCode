@@ -1,0 +1,254 @@
+<resources>
+    <string name="app_name">MedRep</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home_screen">HomeScreenActivity</string>
+
+    <string name="sign_in">SIGN IN</string>
+    <string name="register">REGISTER</string>
+
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="register_category">Registration Category</string>
+    <string name="doctor">Doctor</string>
+    <string name="company">Company</string>
+    <string name="pharmacy">Pharmacy</string>
+    <string name="patient">Patient</string>
+    <string name="next">NEXT</string>
+
+    <string name="campaign_text">With Marketing Campaigns, Doctors receive further educative information about Drugs directly from Pharmaceutical
+    Companies. Furthermore, this page also informs doctors, on changes in existing drugs in terms of their formulations, if any.</string>
+
+
+    <string name="forgot">Forgot Password ?</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <!--hint for register -->
+    <string name="doctor_hint">DOCTOR MCI REGISTRATION ID*</string>
+    <string name="firstname_hint">FIRST NAME*</string>
+    <string name="lastname_hint">LAST NAME*</string>
+    <string name="password_hit">PASSWORD</string>
+    <string name="mobile_hint">PRIMARY MOBILE NUMBER*</string>
+    <string name="add_mobile">ADD MOBILE NUMBER</string>
+    <string name="email_address">EMAIL ADDRESS*</string>
+    <string name="alt_email">ALTERNATIVE EMAIL ADDRESS</string>
+    <string name="address">ADDRESS</string>
+    <string name="address_line_1_hint">ADDRESS LINE 1*</string>
+    <string name="address_line_2_hint">ADDRESS LINE 2</string>
+    <string name="state_hint">STATE*</string>
+    <string name="city_hint">CITY*</string>
+    <string name="zipcode_hint">ZIP CODE*</string>
+    <string name="add_address">ADD MORE ADDRESSES</string>
+    <string name="title_activity_otp">OTPActivity</string>
+    <string name="submit">SUBMIT</string>
+    <string name="resend_otp"><u>Resend OTP</u></string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+
+    <string name="started">GET STARTED</string>
+    <string name="great">Great !</string>
+    <string name="welcome">Welcome Dr.xyz</string>
+    <string name="addphoto">Add Photo</string>
+    <string name="password">password</string>
+    <string name="email_id">E-Mail id</string>
+
+    <string-array name="list_items">
+        <item>Gallery</item>
+        <item>Camera</item>
+    </string-array>
+
+    <string name="desired_pwd">Desired Password</string>
+    <string name="repeat_pwd">Repeat Password</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
+
+    <string name="new_password">ENTER NEW PASSWORD</string>
+    <string name="username">USERNAME</string>
+    <string name="cnfirm_pwd">CONFIRM PASSWORD</string>
+    <string name="otp">ENTER OTP</string>
+    <string name="verification_type">VERIFICATION_TYPE</string>
+    <string name="title_activity_appoinment_details">AppoinmentDetailsActivity</string>
+
+    <string name="product_details">PRODUCT DETAILS</string>
+    <string name="reschedule">RESCHEDULE</string>
+    <string name="title_activity_call_med_rep">CallMedRepActivity</string>
+    <string name="title_activity_sign_in_drawer">MedRep</string>
+
+
+    <string-array name="profile_list">
+        <item>MY PROFILE</item>
+        <item>DASHBOARD</item>
+        <item>NOTIFICATIONS</item>
+        <item>SURVEYS</item>
+        <item>ACTIVITY SCORE</item>
+        <item>MARKETING CAMPAIGNS</item>
+        <item>MEDREP MEETINGS</item>
+        <item>DISCUSSION FORUMS</item>
+        <item>SEARCH FOR DRUGS</item>
+        <item>NEWS &amp; UPDATES</item>
+        <item>SETTINGS </item>
+        <item>INVITE CONTACT</item>
+        <item>LOGOUT</item>
+    </string-array>
+
+    <string-array name="countries">
+        <item>MY PROFILE</item>
+        <item>DASHBOARD</item>
+        <item>NOTIFICATIONS</item>
+        <item>SURVEYS</item>
+        <item>ACTIVITY SCORE</item>
+        <item>MARKETING CAMPAIGNS</item>
+        <item>MEDREP MEETINGS</item>
+        <item>DISCUSSION FORUMS</item>
+        <item>SEARCH FOR DRUGS</item>
+        <item>NEWS &amp; UPDATES</item>
+        <item>SETTINGS </item>
+        <item>INVITE CONTACT</item>
+        <item>LOGOUT</item>
+    </string-array>
+
+    <integer-array name="drawable_list">
+        <item>@mipmap/profile_icon</item>
+        <item>@mipmap/dashboard_menu</item>
+        <item>@mipmap/notifications</item>
+        <item>@mipmap/surveys</item>
+        <item>@mipmap/activity_score</item>
+        <item>@mipmap/marketing</item>
+        <item>@mipmap/meetings</item>
+        <item>@mipmap/discussion_forum</item>
+        <item>@mipmap/search_for_drugs</item>
+        <item>@mipmap/news</item>
+        <item>@mipmap/setting</item>
+        <item>@drawable/invite</item>
+        <item>@mipmap/logout</item>
+    </integer-array>
+
+
+    <string-array name="pharma_profile_list">
+        <item>My Profile</item>
+        <item>Dashboard</item>
+        <item>Product Campaigns</item>
+        <item>Doctor Activity Score</item>
+        <item>Surveys</item>
+        <item>MedRep</item>
+        <item>Other Marketing Campaigns</item>
+        <item>Drug Sales</item>
+        <item>Prescription Activities</item>
+        <item>News &amp; Updates</item>
+        <item>Settings </item>
+        <item>Invite Contact</item>
+        <item>Logout</item>
+    </string-array>
+
+    <integer-array name="pharma_drawable_list">
+        <item>@mipmap/profile_icon</item>
+        <item>@mipmap/dashboard_menu</item>
+        <item>@mipmap/notifications</item>
+        <item>@mipmap/activity_score</item>
+        <item>@mipmap/surveys_menu</item>
+        <item>@mipmap/mdrep</item>
+        <item>@mipmap/marketing_menu</item>
+        <item>@mipmap/discussion_forum</item>
+        <item>@mipmap/drug_sales</item>
+        <item>@mipmap/prescription</item>
+        <item>@mipmap/setting</item>
+        <item>@drawable/invite</item>
+        <item>@mipmap/logout</item>
+    </integer-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_dash_board">DashBoard</string>
+
+    <string name="enterotpcode">Enter OTP Code</string>
+    <string name="otp_edittext_hint">Enter OTP</string>
+
+
+    <!--DOc Dashboard-->
+    <string name="dashboard_title">Welcome </string>
+    <string name="lates_notification">Latest Notifications</string>
+    <string name="Appointments">Appointments</string>
+    <string name="Cipla">Cipla</string>
+    <string name="Notifications">Notifications</string>
+    <string name="download_i">Download</string>
+    <string name="fullscreen">FullScreen</string>
+
+    <string name="No">No</string>
+
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="in_oneday">In 1 Day</string>
+    <string name="in_oneweek">In 1 Week</string>
+    <string name="in_onemonth">In 1 Month</string>
+    <string name="feedback">Feedback</string>
+    <string name="downlaod">Download</string>
+    <string name="shedule">Schedule</string>
+    <string name="schedule_text">Do you want to add this to your calender?</string>
+    <string name="remindme">Remind me</string>
+    <string name="dowload_dialogue">Are you sure you want to download?</string>
+    <string name="company_info_dialog_title">Retrieving Companies</string>
+    <string name="company_info_dialog_msg">Please wait while companies are being retrieved...</string>
+    <string name="pharma_info_dialog_title">Retrieving Notifications</string>
+    <string name="pharma_info_dialog_msg">Please wait while Notifications are being retrieved...</string>
+
+
+    <!--hint for register -->
+
+    <string name="p_emailid">Company Email ID</string>
+
+    <string name="p_report_name">Reporting Manager name</string>
+    <string name="p_report_id">Reporting Manager EmailId</string>
+    <string name="p_report_mobilenumber">Reporting Manager Mobilr Number</string>
+
+
+    <string name="p_track_new_product">Track New Product Notifications</string>
+
+    <string name="p_docterfeedback">Doctor Feedback</string>
+    <string name="p_seeall_notifications">See All Notifications</string>
+
+
+    <string name="p_convetredtoappionments">CONVERTED TO APPOINTMENTS</string>
+
+
+    <string name="pharma">Pharma</string>
+    <string name="pharma1">Pharma1</string>
+    <string name="pharma2">Pharma2</string>
+
+    <string name="q1">1.</string>
+    <string name="q2">2.</string>
+    <string name="q3">3.</string>
+
+    <string name="feedback_question2">2. Will you Prescribe this Product/Medicine to your Patients?</string>
+    <string name="feedback_question3">3. Will you Recommend this Product/Medicine to other Doctors?</string>
+    <string name="Yes">Yes</string>
+    <string name="pharma_mobile">MOBILE NUMBER</string>
+    <string name="pharma_spinner">Areas Covered</string>
+    <string name="feedback_question1">How do you Rate this product?</string>
+    <string name="pending_doctor_list">Pending Doctor List</string>
+
+
+    <string name="pharma_mailid">E-MAIL ID*</string>
+
+
+    <string name="p_stamilo">Stamlo</string>
+    <string name="novomix">Novomix</string>
+
+    <string name="dolo">Dolo650</string>
+    <string name="paracetamal">Paracetamol</string>
+
+    <string-array name="planets_array">
+        <item>Sort</item>
+        <item>By Date</item>
+        <item>By Name</item>
+    </string-array>
+
+    <string name="searchForDrugs">Search For Drugs</string>
+    <string name="relatedProducts">RELATED PRODUCTS</string>
+    <string name="connect">Connect</string>
+    <string name="transform">Transform</string>
+    <string name="share">Share</string>
+    <string name="serve">Serve</string>
+    <string name="serveContent">Content for Serve page:
+“Serve” allows doctors to serve the patient community digitally. This feature is going to be launchedsoon, and would allow doctors the ability to connect with Patients through Online &amp; Remoteconsultation facilities, as well as, managing their patient appointments.</string>
+</resources>

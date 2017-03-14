@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="medrep.medrep.DoctorNotificationActivity">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:background="@drawable/navigation_with_bottom_line">-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.3"-->
+            <!--android:gravity="left|center_vertical">-->
+            <!--<Button-->
+                <!--android:id="@+id/BackButton"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="Back" />-->
+
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.4"-->
+            <!--android:gravity="center">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:src="@mipmap/not_logo"/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.3">-->
+
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+    <include layout="@layout/common_layout"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--<TextView-->
+            <!--android:id="@+id/heading"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Notifications"-->
+            <!--android:textSize="35dp"-->
+            <!--android:textColor="@color/register_color"-->
+            <!--android:layout_gravity="center|center_vertical"/>-->
+        <ListView
+            android:id="@+id/notificatonListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+            android:id="@+id/stickyListViews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

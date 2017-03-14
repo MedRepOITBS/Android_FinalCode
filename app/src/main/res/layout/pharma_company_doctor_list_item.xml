@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="@mipmap/listitemback">
+
+
+
+    <TextView
+        android:id="@+id/title_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/create_appointment_text_siize"
+        android:layout_marginLeft="@dimen/contvt_app_marg"
+        android:layout_marginTop="@dimen/contvt_app_marg"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/silver"
+        android:text="Meeting with "
+        />
+
+
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/create_appointment_text_siize"
+
+        android:layout_marginTop="@dimen/contvt_app_marg"
+        android:layout_toRightOf="@id/title_tv1"
+
+        android:textColor="@android:color/black"
+        android:text="No Title"
+        />
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/contvt_app_marg"
+        android:layout_marginBottom="@dimen/contvt_app_marg"
+        android:drawablePadding="8dp"
+        android:layout_below="@id/title_tv"
+        android:drawableLeft="@mipmap/p_clock_icon"
+        android:textColor="@color/pharma_list_item_light_black"
+
+        android:id="@+id/tv_timing" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/contvt_app_marg"
+        android:layout_marginBottom="@dimen/contvt_app_marg"
+        android:layout_toRightOf="@id/tv_timing"
+        android:layout_below="@id/title_tv"
+        android:drawablePadding="8dp"
+        android:drawableLeft="@mipmap/p_clock_icon"
+        android:textColor="@color/pharma_list_item_light_black"
+
+        android:id="@+id/location_tv" />
+
+
+
+    <!--<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/contvt_app_marg"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_dialog_info"
+        android:id="@+id/pharma_profilepic" />-->
+    <com.app.util.RoundedImageView
+        android:id="@+id/pharma_profilepic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/contvt_app_marg"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_dialog_info"/>
+
+
+
+</RelativeLayout>

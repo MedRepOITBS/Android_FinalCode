@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="@dimen/margin_tendp1"
+    android:layout_marginRight="@dimen/margin_tendp1"
+    android:paddingLeft="10dp"
+    android:background="@color/home_button"
+    android:text="sadsasa"
+    android:gravity="center_vertical"
+    android:layout_gravity="center_vertical"
+    android:textColor="@android:color/white"
+    android:singleLine="true"
+    android:textSize="@dimen/text_size_profile" />

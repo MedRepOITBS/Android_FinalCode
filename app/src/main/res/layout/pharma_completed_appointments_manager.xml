@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/tv_appionnment_doctername">
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <include
+        android:id="@+id/dashboard"
+        layout="@layout/pharma_black_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scrollv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/app_loy_des"
+                android:orientation="vertical"
+                android:background="@drawable/profile_background_shape"
+
+
+                >
+
+                <include
+                    android:id="@+id/comman"
+                    layout="@layout/pharma_comman_appointment_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:id="@+id/appointments_description_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/profile_background_shape"
+                    android:layout_marginLeft="@dimen/margintendp"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginRight="@dimen/margintendp"
+                    >
+
+                    <TextView
+                        android:id="@+id/appointments_description_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margintendp"
+                        android:layout_marginLeft="@dimen/margintendp"
+                        android:layout_marginRight="@dimen/margintendp"
+                        android:layout_alignParentLeft="true"
+                        android:text="Appointment Scheduled on: "
+                        android:singleLine="true"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/docchain_text"
+                        android:textColor="@color/pharma_actscor_blue03"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/appointments_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/appointments_description_title"
+                        android:layout_marginLeft="@dimen/margintendp"
+                        android:layout_marginBottom="@dimen/margintendp"
+                        android:layout_marginRight="@dimen/margintendp"
+                        android:text="Appointment description"
+                        android:textColor="@color/pharma_actscor_blue03"
+                        android:singleLine="true"
+                        android:textSize="@dimen/docchain_text" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            android:id="@+id/time_lay"
+            android:weightSum="2">
+            <Button android:layout_height="48dp"
+                android:id="@+id/present_activityscore"
+                android:text="Doctor's Activity Score"
+                android:background="@color/home_button"
+                android:textAllCaps="false"
+                android:textColor="@color/home_button_text"
+                android:layout_width="0dp" android:layout_weight="1"/>
+
+            <Button android:layout_height="48dp"
+                android:id="@+id/viewbrocher"
+                android:text="View Product Brochure"
+                android:textAllCaps="false"
+                android:background="@color/home_highted"
+                android:textColor="@color/home_button_text"
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    </LinearLayout>
+    <fragment
+        android:id="@+id/fragment_navigation_drawer"
+        android:name="com.app.fragments.PharmaNavigationDrawerFragment"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout>

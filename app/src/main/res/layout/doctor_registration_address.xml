@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/reg_margin"
+
+    android:layout_height="match_parent">
+
+    <TextView android:id="@+id/addressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13dp"
+        android:layout_margin="10dp"
+                android:textColor="@color/tect_color_white"
+        android:text="@string/address"
+        />
+
+    <ImageView android:id="@+id/auto_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:src="@drawable/picklocation"
+
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true" />
+
+    <ImageView android:id="@+id/removeImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+      android:layout_toRightOf="@id/addressTextView"
+    android:src="@mipmap/minus"/>
+
+
+    <!--android:textColor="@color/home_button_text"-->
+
+        <EditText android:id="@+id/edittext_address_one"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/home_button_text"
+                android:hint="@string/address_line_1_hint"
+                android:textColor="#000000"
+            android:textSize="@dimen/text_size_edit"
+            android:layout_below="@id/addressTextView"
+                android:singleLine="true"
+                android:layout_height="wrap_content" />
+
+            <EditText android:id="@+id/edittext_address_two"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:hint="@string/address_line_2_hint"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_edit"
+                android:layout_below="@id/edittext_address_one"
+                android:textColor="#000000"
+                android:layout_height="wrap_content" />
+
+
+    <LinearLayout android:id="@+id/layout_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittext_address_two"
+        android:background="@android:color/transparent"
+        android:weightSum="2"
+        android:orientation="vertical">
+        <EditText android:id="@+id/edittext_state"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/home_button_text"
+            android:textColor="#000000"
+            android:textSize="@dimen/text_size_edit"
+            android:inputType="textCapWords"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:singleLine="true"
+            android:layout_weight="1"
+
+            android:hint="@string/state_hint"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_margin="1dp"
+            android:layout_height="match_parent"
+            />
+
+
+        <EditText android:id="@+id/edittext_city"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:textSize="@dimen/text_size_edit"
+            android:layout_marginTop="10dp"
+            android:background="@color/home_button_text"
+            android:hint="@string/city_hint"
+            android:singleLine="true"
+            android:inputType="textCapWords"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:layout_below="@id/edittext_state"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+            <EditText android:id="@+id/edittext_zipcode"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:textColor="#000000"
+                android:textSize="@dimen/text_size_edit"
+                android:singleLine="true"
+                android:layout_below="@id/layout_city"
+                android:inputType="number"
+                android:hint="@string/zipcode_hint"
+                android:layout_height="wrap_content" />
+
+    <requestFocus/>
+</RelativeLayout>

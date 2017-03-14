@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dialogLayout"
+    android:background="@color/tect_color_white">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="New Post"
+        android:gravity="center"
+        android:textColor="@color/register_color"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/white_backgound_with_borders"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No preview is avialable yet !!!"
+        android:textColor="@color/register_color"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_below="@id/title"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/previewImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_below="@id/title"
+        android:background="@mipmap/doc_dashboard_slider"/>
+
+    <Button
+        android:id="@+id/uploadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/previewImage"
+        android:text="Upload Image"
+        android:textColor="@color/tect_color_white"
+        android:textAllCaps="false"
+        android:textSize="10dp"
+        android:drawableTop="@mipmap/camara_icon"
+        android:drawablePadding="5dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/p_notifi_list"/>
+
+    <EditText
+        android:id="@+id/postText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="5"
+        android:minHeight="50dp"
+        android:layout_below="@id/uploadImage"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/white_backgound_with_borders"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:layout_below="@id/postText">
+        <Button
+            android:id="@+id/okButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="OK"
+            android:textColor="@color/tect_color_white"
+            android:background="@color/home_button" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="cancel"
+            android:textColor="@color/tect_color_white"
+            android:background="@color/home_button"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+    
+
+
+
+</RelativeLayout>

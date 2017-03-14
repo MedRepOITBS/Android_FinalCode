@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:fillViewport="true"-->
+    <!--android:id="@+id/parent_scroll_view">-->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/brand_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/loading"
+                android:layout_marginTop="5dp"/>
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/loading"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"/>
+
+            <!--<medrep.medrep.PinchZoomImageView
+                android:id="@+id/brand_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:scaleType="matrix"
+                android:layout_marginTop="-5dp"/>-->
+            <!--android:src="@mipmap/loading"-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- this layout can be any height you want -->
+            <TextView
+                android:id="@+id/not_detail_text_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/brand_detail_image"
+                android:textColor="@color/home_button"
+                android:paddingLeft="@dimen/inside_not_marg"
+                android:paddingRight="@dimen/inside_not_marg"
+                android:lines="1"
+                android:maxLines="2"
+                android:text="Paracetamol is used to treat many conditions such as headache, muscle aches"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/not_detail_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/not_detail_text_heading"
+                android:paddingLeft="@dimen/inside_not_marg"
+                android:paddingRight="@dimen/inside_not_marg"
+                android:lines="2"
+                android:layout_marginBottom="10dp"
+                android:text="Paracetamol is a pain reliever and a fever reducer. The exact mechanism of action of is not known. Paracetamol is used to treat many conditions such as headache, muscle aches, arthritis, backache, toothaches, colds, and fevers."
+                android:textSize="15dp" />
+
+        </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/video_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/video_thumbnail"
+            android:paddingTop="250dp"/>
+    </RelativeLayout>
+    </LinearLayout>
+
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/brand_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-5dp"/>
+            &lt;!&ndash;android:src="@mipmap/loading"&ndash;&gt;
+
+        &lt;!&ndash;<ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-5dp"/>&ndash;&gt;
+
+
+
+
+    </RelativeLayout>-->
+
+
+<!--</ScrollView>-->

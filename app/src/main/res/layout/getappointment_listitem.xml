@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_weight="1.8"
+        android:background="@drawable/dashboardbox_shape"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <LinearLayout
+            android:id="@+id/ll_getAppaointment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MR.ALEX"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/name_designation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paracetamal,Ranboxy"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/margin_tendp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/month_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="AUG"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="03"
+                android:textColor="#0bbfb6"
+                android:textSize="@dimen/margin_tendp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

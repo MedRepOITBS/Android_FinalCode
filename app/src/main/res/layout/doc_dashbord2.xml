@@ -1,0 +1,279 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.88"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="medrep.medrep.DashBoard">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#1899DD"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/doctor_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/margin_small"
+                    android:layout_alignParentRight="true"
+                    android:singleLine="true"
+                    android:text="@string/dashboard_title"
+                    android:textColor="@color/tect_color_white"
+                    android:textSize="@dimen/notification_header_text_size" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/header_slider"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/dashboard"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/appointmentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Appointments Today"
+                        android:textColor="@color/register_color"
+                        android:textSize="35dp"
+                        android:focusable="false"/>
+                    <TextView
+                        android:id="@+id/appointmentOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Appointment 1"
+                        android:singleLine="true"
+                        android:textColor="@color/register_color"
+                        android:paddingTop="10dp"
+                        android:focusable="false"/>
+                    <TextView
+                        android:id="@+id/appointmentTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Appointment 2"
+                        android:singleLine="true"
+                        android:textColor="@color/register_color"
+                        android:paddingTop="10dp"
+                        android:focusable="false"/>
+                    <TextView
+                        android:id="@+id/appointmentThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Appointment 3"
+                        android:singleLine="true"
+                        android:textColor="@color/register_color"
+                        android:paddingTop="10dp"
+                        android:focusable="false"/>
+                    <Button
+                        android:id="@+id/appointmentMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="More"
+                        android:textColor="@color/register_color"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notifications"
+                        android:textColor="@color/register_color"
+                        android:textSize="35dp"/>
+                    <TextView
+                        android:id="@+id/notificationOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notification 1"
+                        android:singleLine="true"
+                        android:textColor="@color/register_color"
+                        android:paddingTop="10dp"/>
+                    <TextView
+                        android:id="@+id/notificationTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notification 2"
+                        android:singleLine="true"
+                        android:textColor="@color/register_color"
+                        android:paddingTop="10dp"/>
+                    <TextView
+                        android:id="@+id/notificationThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notification 3"
+                        android:singleLine="true"
+                        android:textColor="@color/register_color"
+                        android:paddingTop="10dp"/>
+                    <Button
+                        android:id="@+id/notificationMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:text="More"
+                        android:textColor="@color/register_color"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.6"
+                android:background="@mipmap/dashboard_bg"
+                android:orientation="vertical"
+                android:weightSum="1">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="35dp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:id="@+id/notifications"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:src="@mipmap/notifications_1" />
+
+                    <ImageView
+                        android:id="@+id/survey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:src="@mipmap/surveys_1" />
+
+                    <ImageView
+                        android:id="@+id/activity_score"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:src="@mipmap/activity_1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:id="@+id/marketing_campaigns"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:src="@mipmap/marketing_campaign" />
+
+                    <ImageView
+                        android:id="@+id/search_for_drugs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="3dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@mipmap/search" />
+
+                    <ImageView
+                        android:id="@+id/news"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:src="@mipmap/doctorplus_icon" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!--<Button-->
+                <!--android:id="@+id/getAppointments_Button"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/login_layout"-->
+                <!--android:background="@color/home_button"-->
+                <!--android:text="Appointments"-->
+
+                <!--android:textColor="@color/home_button_text" />-->
+            <!--dashboard-->
+
+
+            <!--end dashboard-->
+        </LinearLayout>
+    </ScrollView>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/appointments_ribbon_bar_lin"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="0.12"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:weightSum="1">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_lefttArraow"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/margin_small"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="0.1"-->
+            <!--android:src="@mipmap/leftarrow" />-->
+
+        <!--<android.support.v4.view.ViewPager-->
+            <!--android:id="@+id/appointments_ribbon_view_pager"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.80" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/vpagertext"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.80"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="No Appointments Available"-->
+            <!--android:textColor="@color/home_button"-->
+            <!--android:textSize="16dp" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_rightArraow"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/margin_small"-->
+            <!--android:layout_weight="0.1"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:src="@mipmap/right_arrow" />-->
+    <!--</LinearLayout>-->
+
+</LinearLayout>

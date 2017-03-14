@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@mipmap/noti_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+
+    <include
+        android:id="@+id/dashboard"
+        layout="@layout/pharma_black_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/p_company_name"
+            android:src="@mipmap/compny"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/d_gray">
+
+    <ListView
+        android:id="@+id/notifications_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@android:color/transparent"
+        android:layout_marginTop="10dp"
+
+        android:layout_marginLeft="@dimen/brand_listview_margin"
+        android:layout_marginRight="@dimen/brand_listview_margin"
+        android:dividerHeight="10dp"
+        android:visibility="gone" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:id="@+id/track_new_product"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearlayout_fourtabs"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/l_track_new_product"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/p_notifi_list"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_select" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_weight="2.6"
+                        android:gravity="center_vertical"
+                        android:text="@string/p_track_new_product"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/margin_tendp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:contentDescription="@string/No"
+                        android:src="@mipmap/p_rightarrow" />
+
+
+                </LinearLayout>
+                <!--                   docter feedback-->
+                <LinearLayout
+                    android:id="@+id/l_docterfeedback"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/p_notifi_list"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_feedback" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_weight="2.6"
+                        android:text="@string/p_docterfeedback"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/margin_tendp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_rightarrow" />
+
+
+                </LinearLayout>
+
+
+
+
+                <!--see all notifications-->
+
+
+                <LinearLayout
+                    android:id="@+id/l_seeallnotifi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/p_notifi_list"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_plus" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_weight="2.6"
+                        android:gravity="center_vertical"
+                        android:text="@string/p_seeall_notifications"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/margin_tendp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_rightarrow" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:id="@+id/layout_notifications"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">-->
+
+
+
+                <!--<LinearLayout
+                    android:id="@+id/l_paracetamol"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/p_notifi_list"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_weight="0.2" />
+
+                    <TextView
+                        android:id="@+id/paracetamol"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_weight="2.6"
+                        android:text="@string/paracetamal"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/margin_tendp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_rightarrow" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/l_dolo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/p_notifi_list"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_weight="0.2" />
+
+                    <TextView
+                        android:id="@+id/dolo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_weight="2.6"
+                        android:text="@string/dolo"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/margin_tendp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_rightarrow" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/l_novomix"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/p_notifi_list"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_weight="0.2" />
+
+                    <TextView
+                        android:id="@+id/novomix"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_weight="2.6"
+                        android:text="@string/novomix"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/margin_tendp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_rightarrow" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/l_stailo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:background="@color/p_notifi_list"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="3">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_weight="0.2" />
+
+                    <TextView
+                        android:id="@+id/stailo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_weight="2.6"
+                        android:text="@string/p_stamilo"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/margin_tendp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:src="@mipmap/p_rightarrow" />
+
+                </LinearLayout>-->
+
+                <!--<ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:src="@mipmap/down_arrow"
+                    android:layout_marginBottom="@dimen/margin_tendp1"
+                    android:layout_marginTop="@dimen/arrow_bottem"
+                    android:id="@+id/iv_downarraow" />
+            </LinearLayout>-->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
+    <fragment
+        android:id="@+id/fragment_navigation_drawer"
+        android:name="com.app.fragments.PharmaNavigationDrawerFragment"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="medrep.medrep.HomeScreenActivity">
+
+    <!--<TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />-->
+
+    <FrameLayout android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/home_bg"></FrameLayout>
+
+    <LinearLayout android:id="@+id/home_button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/home_button">
+
+        <Button android:id="@+id/signButton" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:background="@color/home_highted"
+            android:textColor="@color/home_button_text"
+            android:text="@string/sign_in" />
+
+        <View
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:background="@color/home_button_bar"/>
+
+        <Button android:id="@+id/registerButton" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:background="@color/home_button"
+            android:textColor="@color/home_button_text"
+             android:text="@string/register"/>
+    </LinearLayout>
+
+    <TextView android:id="@+id/medrep_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@id/home_button_bar"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/medrep_text"
+        android:layout_centerVertical="true"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+
+        android:layout_marginBottom="80dp"
+        />
+
+</RelativeLayout>

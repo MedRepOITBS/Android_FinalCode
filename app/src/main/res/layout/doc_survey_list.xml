@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/noti_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_header_height"
+        android:layout_alignParentTop="true"
+        layout="@layout/doc_notifiaction_header" />
+
+    <ListView
+        android:id="@+id/survey_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/brand_listview_margin"
+        android:layout_marginRight="@dimen/brand_listview_margin"
+        android:dividerHeight="10dp" />
+
+</RelativeLayout>

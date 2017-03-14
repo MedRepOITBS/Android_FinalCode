@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/register_bg"
+    android:orientation="vertical">
+
+    <!-- android:background="@mipmap/register_bg"-->
+<!--android:layout_marginLeft="@dimen/create_appointment_text_siize"
+                android:layout_marginRight="@dimen/create_appointment_text_siize"
+               -->
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="@dimen/margin_tendp"
+            android:orientation="vertical">
+
+          <ImageView
+                android:id="@+id/medrep_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/notification_header_height"
+                android:src="@mipmap/logo_regester" />
+
+
+            <LinearLayout
+                android:id="@+id/headof_sales_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/create_appointment_text_siize"
+                android:layout_marginRight="@dimen/create_appointment_text_siize"
+                android:layout_marginTop="@dimen/abc_action_bar_stacked_max_height"
+                android:background="@drawable/pharma_reg_zero_shape"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/create_appointment_text_siize"
+                    android:padding="20dp"
+                    android:text="Head of Sales  and Marketing"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/categery_area_managerlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/create_appointment_text_siize"
+                android:layout_marginRight="@dimen/create_appointment_text_siize"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/pharma_reg_zero_shape"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/create_appointment_text_siize"
+                    android:padding="20dp"
+                    android:text="Categery / Therapeutic Area Manager"
+                    android:textColor="@android:color/white"
+                 />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/area_managerlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/create_appointment_text_siize"
+                android:layout_marginRight="@dimen/create_appointment_text_siize"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/pharma_reg_zero_shape"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:textSize="@dimen/create_appointment_text_siize"
+                    android:text="Area Manager"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/medrep_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/create_appointment_text_siize"
+                android:layout_marginRight="@dimen/create_appointment_text_siize"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/pharma_reg_zero_shape"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:textSize="@dimen/create_appointment_text_siize"
+                    android:text="Medical Representative"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/next"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/create_appointment_text_siize"
+                android:layout_marginRight="@dimen/create_appointment_text_siize"
+                android:layout_marginTop="@dimen/abc_action_bar_stacked_max_height"
+                android:background="@color/home_button"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:textSize="20dp"
+                    android:text="Next"
+                    android:textColor="@color/home_button_text"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

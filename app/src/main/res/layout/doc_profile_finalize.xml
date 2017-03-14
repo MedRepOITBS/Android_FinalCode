@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+ >
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+<!--    <include
+        android:id="@+id/dashboard"
+        layout="@layout/pharma_black_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />-->
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@mipmap/callmedrepbg"
+>
+
+        <!--<ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/profile_picture"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/banner"
+            android:layout_gravity="center_horizontal|center_vertical" />-->
+        <ImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:src="@drawable/user_icon192_192"/>
+       <!-- android:scaleType="fitXY"-->
+
+
+        <Button android:layout_height="wrap_content"
+        android:id="@+id/edit_pic"
+            android:text="CHANGE"
+            android:textSize="15dp"
+            android:layout_alignParentRight="true"
+            android:padding="2dp"
+            android:background="@color/pharma_actscor_blue02"
+            android:textColor="@color/home_button_text"
+            android:layout_width="wrap_content"
+            />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_tendp1"
+            android:layout_marginLeft="@dimen/margin_tendp1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/create_appointment_text_siize"
+             />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tendp1"
+            android:orientation="vertical">
+
+
+            <TextView android:layout_height="wrap_content"
+                android:id="@+id/edit_first_screen"
+                android:text="EDIT"
+                android:textSize="15sp"
+                android:layout_alignParentRight="true"
+                android:padding="2dp"
+                android:layout_gravity="end"
+                android:layout_marginRight="@dimen/margin_tendp1"
+                android:textStyle="bold"
+                android:textColor="@color/home_button"
+                android:layout_width="wrap_content"
+                />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/profile_background_shape"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:layout_marginRight="@dimen/margin_tendp1"
+
+                                >
+
+                    <TextView
+                        android:id="@+id/tv_moblieheading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_tendp1"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_marginRight="@dimen/margin_tendp1"
+                        android:layout_alignParentLeft="true"
+                         android:text="Mobile:"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_size_profile"
+                        android:textColor="@color/home_button"
+                         />
+
+
+                    <TextView
+                        android:id="@+id/tv_moblie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/margin_tendp1"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_marginRight="@dimen/margin_tendp1"
+
+                        android:text="9959xx00112"
+                        android:textColor="@color/silver"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_size_profile" />
+
+
+
+
+
+
+                    <TextView
+                        android:id="@+id/tv_aler_mobile_hdr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentLeft="true"
+                                          android:layout_below="@id/tv_moblieheading"
+                        android:layout_marginTop="@dimen/margin_tendp1"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_marginRight="@dimen/margin_tendp1"
+                        android:layout_marginBottom="@dimen/margin_tendp1"
+                        android:text="Alternate Mobile:"
+                        android:textColor="@color/home_button"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_size_profile" />
+
+                    <TextView
+                        android:id="@+id/tv_phone_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                         android:text="9959xx00123"
+                        android:layout_below="@id/tv_moblieheading"
+                        android:textColor="@color/silver"
+                        android:layout_marginBottom="@dimen/margin_tendp1"
+                        android:layout_marginTop="@dimen/margin_tendp1"
+                        android:layout_marginLeft="@dimen/margin_tendp1"
+                        android:layout_marginRight="@dimen/margin_tendp1"
+
+                        android:layout_alignParentRight="true"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_size_profile" />
+
+
+                </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/profile_background_shape"
+                android:layout_marginLeft="@dimen/margin_tendp1"
+                android:layout_marginRight="@dimen/margin_tendp1"
+
+                >
+
+                <TextView
+                    android:id="@+id/tv_email_hdr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_tendp1"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:layout_marginRight="@dimen/margin_tendp1"
+                    android:layout_alignParentLeft="true"
+                    android:text="Email:"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_size_profile"
+                    android:textColor="@color/home_button"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/margin_tendp1"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:layout_marginRight="@dimen/margin_tendp1"
+
+                    android:text="ssr@gmail.com"
+                    android:textColor="@color/silver"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_size_profile" />
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/tv_aler_email_hdr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/tv_email_hdr"
+                    android:layout_marginTop="@dimen/margin_tendp1"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:layout_marginRight="@dimen/margin_tendp1"
+                    android:layout_marginBottom="@dimen/margin_tendp1"
+                    android:text="Alternate Email:"
+                    android:textColor="@color/home_button"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_size_profile" />
+
+                <TextView
+                    android:id="@+id/tv_email_alter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="xxx@gmail.com"
+                    android:layout_below="@id/tv_email_hdr"
+                    android:textColor="@color/silver"
+                    android:layout_marginBottom="@dimen/margin_tendp1"
+                    android:layout_marginTop="@dimen/margin_tendp1"
+                    android:layout_marginLeft="@dimen/margin_tendp1"
+                    android:layout_marginRight="@dimen/margin_tendp1"
+
+                    android:layout_alignParentRight="true"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_size_profile" />
+
+
+            </RelativeLayout>
+
+
+            <TextView android:layout_height="wrap_content"
+                android:id="@+id/edit_address_screen"
+                android:text="EDIT"
+                android:textSize="15sp"
+                android:layout_alignParentRight="true"
+                android:padding="2dp"
+                android:textStyle="bold"
+                android:layout_gravity="end"
+                android:layout_marginRight="@dimen/margin_tendp1"
+                 android:textColor="@color/home_button"
+                android:layout_width="wrap_content"
+                />
+
+            <LinearLayout
+                android:id="@+id/adress_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_tendp1"
+                android:layout_marginRight="@dimen/margin_tendp1"
+
+                android:background="@drawable/profile_background_shape"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_tendp1">
+
+                <TextView
+                    android:id="@+id/tv_address_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                   android:gravity="center_vertical"
+                    android:padding="@dimen/margin_small"
+                    android:text="Address"
+                    android:textColor="@color/home_button"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_size_profile" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".20dp"
+                    android:background="@color/home_button" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/tv_adress1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:paddingLeft="@dimen/margin_small"
+                        android:text="Ramnagar"
+                        android:textColor="@color/silver"
+                        android:textSize="@dimen/text_size_profile" />
+
+                    <TextView
+                        android:id="@+id/tv_adress2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:padding="@dimen/margin_small"
+                        android:text="Ramnagar"
+                        android:textColor="@color/silver"
+
+                        android:textSize="@dimen/text_size_profile" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:background="@color/home_button"
+        android:gravity="center"
+        android:text="CLOSE"
+        android:textColor="@color/home_button_text"
+        android:textSize="@dimen/abc_dialog_padding_top_material" />
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        layout="@layout/reg_button" />
+</RelativeLayout>

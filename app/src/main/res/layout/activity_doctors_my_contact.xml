@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/tect_color_white">
+    <include layout="@layout/common_layout"/>
+
+    <LinearLayout
+        android:id="@+id/listLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:padding="10dp"
+        android:background="@mipmap/noti_bg"
+        android:orientation="vertical">
+        <GridView
+            android:id="@+id/contactsGridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="2"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp"
+            android:gravity="left"
+            android:stretchMode="columnWidth"
+            android:isScrollContainer="false" />
+    </LinearLayout>
+    <include layout="@layout/common_tabs"/>
+</LinearLayout>

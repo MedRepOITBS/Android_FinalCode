@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_team"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="@dimen/margin_small"
+    android:background="@color/p_notifi_list"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_tendp"
+    android:weightSum="3">
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="2.8"
+        android:layout_marginLeft="@dimen/margin_tendp1"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/margin_tendp" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.2"
+        android:contentDescription="@string/No"
+        android:src="@mipmap/p_rightarrow" />
+
+
+</LinearLayout>

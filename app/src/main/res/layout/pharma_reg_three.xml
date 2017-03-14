@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/register_bg"
+    android:orientation="vertical">
+
+    <!-- android:background="@mipmap/register_bg"-->
+    <!--android:layout_marginLeft="@dimen/create_appointment_text_siize"
+                    android:layout_marginRight="@dimen/create_appointment_text_siize"
+                   -->
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="@dimen/margin_tendp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/medrep_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/notification_header_height"
+                android:src="@mipmap/logo_regester" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tendp"
+                android:src="@mipmap/page_nav2_icon"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                />
+
+            <EditText android:id="@+id/edittext_report_m_name"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:background="@color/home_button_text"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+                android:hint="@string/p_report_name"
+                android:textSize="@dimen/text_size_edit"
+                android:layout_height="wrap_content" />
+
+            <EditText android:id="@+id/ed_report_emaiid"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:inputType="text|textNoSuggestions"
+                android:hint="@string/p_report_id"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_edit"
+                android:layout_height="wrap_content" />
+
+            <EditText android:id="@+id/ed_report_mobilenumber"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:inputType="phone"
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+                android:hint="@string/p_report_mobilenumber"
+
+                android:textColor="#000000"
+                android:maxLength="10"
+                android:textSize="@dimen/text_size_edit"
+                android:singleLine="true"
+                android:layout_height="wrap_content" />
+
+
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/reg_button" />
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+</LinearLayout>

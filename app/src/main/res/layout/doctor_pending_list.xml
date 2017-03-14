@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/tect_color_white"
+    android:layout_height="50dp">
+    <TextView
+        android:id="@+id/doctor_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:textSize="15dp"
+        android:paddingLeft="5dp"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:textColor="@color/dark_grey"/>
+    <Button
+        android:id="@+id/remind_status"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:textColor="@color/tect_color_white"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:text="Remind"
+        android:background="@color/home_highted"/>
+</LinearLayout>

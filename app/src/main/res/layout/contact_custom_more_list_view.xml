@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:padding="10dp"/>
+    <Button
+        android:id="@+id/doctorImage"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:focusable="false"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/rounded_corners_with_white_background"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/doctorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:singleLine="true"/>
+        <TextView
+            android:id="@+id/doctorSpecialist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/close"
+        android:layout_gravity="right|center_vertical"/>
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ok"
+        android:layout_gravity="right|center_vertical"/>
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/register_bg"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:src="@mipmap/med_login" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_dialog_heading"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/verified" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="@dimen/text_dialog_heading"
+        android:text="@string/enterotpcode"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_dialog_heading"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_dialog_heading"
+        android:orientation="vertical" >
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_small"
+            android:background="@android:color/white"
+            android:layout_weight="3">
+
+            <ImageView android:layout_width="wrap_content"
+                android:contentDescription="@string/welcome"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingTop="10dp"
+                android:src="@mipmap/password"/>
+            <EditText android:id="@+id/enterotp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_weight="2"
+                android:singleLine="true"
+
+                android:inputType="number"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:hint="@string/otp_edittext_hint"/>
+
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingTop="10dp"
+                android:contentDescription="@string/welcome"
+                android:src="@mipmap/checked"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_resend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:gravity="right"
+            android:padding="@dimen/margin_tendp"
+            android:text="resend"
+            android:textStyle="bold"
+            android:textColor="@color/home_button_text" />
+
+        <Button
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/home_button"
+            android:gravity="center"
+            android:padding="@dimen/margin_tendp"
+            android:text="@string/submit"
+            android:textColor="@color/home_button_text" />
+    </LinearLayout>
+
+</LinearLayout>

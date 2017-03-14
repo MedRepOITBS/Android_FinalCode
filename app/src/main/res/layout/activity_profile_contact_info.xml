@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="medrep.medrep.ProfileEducationActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/edit_profile_titlebar"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <TextView
+                android:id="@+id/tv_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MOBILE NUMBER"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/notification_header_color"
+                android:fontFamily="Helvetica Neue Regular"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/et_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint=" Mobile Number"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners"/>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHONE NUMBER"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/notification_header_color"
+                android:fontFamily="Helvetica Neue Regular"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="phone"
+                android:digits="0123456789"
+                android:hint=" Phone Number"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners"/>
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EMAIL"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/notification_header_color"
+                android:fontFamily="Helvetica Neue Regular"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="textEmailAddress"
+                android:hint=" Email"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners"/>
+
+            <TextView
+                android:id="@+id/tv_alt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALTERNATE EMAIL"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/notification_header_color"
+                android:fontFamily="Helvetica Neue Regular"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/et_alt_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint=" Alternate Email"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

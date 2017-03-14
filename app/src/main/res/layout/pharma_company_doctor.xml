@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/tv_appionnment_doctername">
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <include
+        android:id="@+id/dashboard"
+        layout="@layout/pharma_black_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/thera_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/p_notifi_list"
+        android:padding="@dimen/margin_tendp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/p_thera" />
+    </RelativeLayout>
+
+    <ListView android:id="@+id/converted_appointments_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+    <!--<ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/margin_tendp1"
+                android:background="@mipmap/listitemback"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                android:id="@+id/list_itemm_convetedview">
+                &lt;!&ndash;android:background="@mipmap/p_c"&ndash;&gt;
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/margin_tendp"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_small"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/create_appointment_text_siize"
+                            android:textColor="@android:color/black"
+                            android:text="Meeting with Dr.anil kumar"
+                             />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_small"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/p_clock_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/pharma_list_item_light_black"
+                            android:text="8-10 a.m"
+                            android:layout_marginLeft="@dimen/margin_tendp1"
+                            android:id="@+id/tv_timing" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_tendp"
+                    android:background="@color/d_gray"
+                    android:orientation="vertical"
+
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:id="@+id/pharma_profilepic" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>-->
+
+</LinearLayout>
+    <fragment
+        android:id="@+id/fragment_navigation_drawer"
+        android:name="com.app.fragments.PharmaNavigationDrawerFragment"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
+        tools:layout="@layout/fragment_navigation_drawer" />
+</android.support.v4.widget.DrawerLayout>

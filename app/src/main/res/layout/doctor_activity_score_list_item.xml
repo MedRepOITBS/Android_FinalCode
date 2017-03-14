@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/app_loy"
+    android:background="@drawable/profile_background_shape"
+    android:layout_marginLeft="@dimen/margintendp"
+    android:layout_marginTop="@dimen/margintendp"
+    android:layout_marginRight="@dimen/margintendp"
+
+    >
+
+    <TextView
+        android:id="@+id/company_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/margintendp"
+        android:layout_marginTop="@dimen/margintendp"
+        android:drawableLeft="@mipmap/p_clock_icon"
+        android:drawablePadding="@dimen/create_appointment_drabale_padding"
+        android:layout_marginLeft="@dimen/create_appointment_margin"
+        android:layout_marginRight="@dimen/create_appointment_margin"
+        android:layout_alignParentLeft="true"
+        android:singleLine="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/docchain_text"
+        android:text="khh"
+        android:textColor="@android:color/black"
+        />
+
+    <TextView
+        android:id="@+id/total_score_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margintendp"
+        android:layout_marginBottom="@dimen/margintendp"
+        android:layout_marginTop="@dimen/margintendp"
+        android:text="jashkjash"
+        android:layout_marginRight="@dimen/margintendp"
+        android:textColor="@color/home_button"
+        android:singleLine="true"
+        android:textSize="@dimen/docchain_text" />
+
+</RelativeLayout>
+

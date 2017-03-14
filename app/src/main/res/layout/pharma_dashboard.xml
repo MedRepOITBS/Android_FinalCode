@@ -1,0 +1,215 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="0.88"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:fillViewport="true">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="medrep.pharma.DashBoard">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1899DD"
+            android:orientation="vertical"
+            android:padding="@dimen/abc_action_bar_default_padding_material">
+
+
+            <TextView
+                android:id="@+id/pharma_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="@dimen/margin_small"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="@string/dashboard_title"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/abc_text_size_medium_material" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/header_slider"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:background="@color/home_button"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/slider_image" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF0000"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentRight="true"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/tv_latest_notificaation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/margin_small"
+                    android:drawableRight="@mipmap/notifications_red"
+                    android:text="Latest Product Campaigns"
+                    android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@mipmap/body_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/margin_tendp"
+                android:background="@mipmap/p_dividers"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_tendp"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:id="@+id/p_trackcompaigns"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@mipmap/p_notifiation" />
+
+                    <ImageView
+                        android:id="@+id/p_survery"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@mipmap/p_surveys" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_tendp">
+
+                    <ImageView
+                        android:id="@+id/p_docter_activity_score"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/activityscore" />
+
+                    <ImageView
+                        android:id="@+id/p_docter_medrep_perforamnce"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@mipmap/trackmedrep_icon" />
+               <!--     android:src="@mipmap/p_marketing"-->
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/appointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/home_button"
+            android:text="@string/Appointments"
+            android:textColor="#FFFFFF"/>
+        <LinearLayout
+            android:id="@+id/appointments_ribbon_bar_lin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.12"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/iv_lefttArraow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.1"
+                android:src="@mipmap/leftarrow" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/appointments_ribbon_view_pager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.80" />
+
+
+            <TextView
+                android:id="@+id/vpagertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.80"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="No upcoming Appointments"
+                android:textColor="@color/home_button"
+                android:textSize="16dp" />
+            <ImageView
+                android:id="@+id/iv_rightArraow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_weight="0.1"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/right_arrow" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--</ScrollView>-->
+
+
+</LinearLayout>
+

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/tect_color_white">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:padding="10dp"-->
+        <!--android:background="@drawable/navigation_with_bottom_line">-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="left|center_vertical"-->
+            <!--android:layout_weight="0.2">-->
+            <!--<Button-->
+                <!--android:id="@+id/menuButton"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:background="@drawable/back_button"/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_weight="0.6">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/not_logo"/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.2">-->
+
+        <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+    <include layout="@layout/common_layout"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+            <ImageView
+                android:id="@+id/doctorImage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/grey_background"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/doctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Dr John Deo"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:textColor="@color/register_color"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:id="@+id/specialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/register_color"
+                    android:textSize="15dp" />
+            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="0.8"/>-->
+            <!--<ImageButton-->
+                <!--android:id="@+id/addIcon"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="0.2"-->
+                <!--android:background="@color/tect_color_white"-->
+                <!--android:src="@mipmap/add_icon"-->
+                <!--android:gravity="right|center"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/groupImage"-->
+            <!--android:layout_width="55dp"-->
+            <!--android:layout_height="55dp"-->
+            <!--android:src="@mipmap/playstore_icon"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:gravity="left"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/groupName"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:text="Group1"-->
+            <!--android:textColor="@color/silver"-->
+            <!--android:textSize="15dp"/>-->
+            <ImageButton
+                android:id="@+id/add"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@mipmap/add_icon"
+                android:layout_gravity="center_vertical"/>
+            <ImageButton
+                android:id="@+id/message"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/message"
+                android:layout_gravity="center_vertical" />
+    </LinearLayout>
+    <!--<ListView-->
+        <!--android:id="@+id/doctorPostListView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_height="1"/>-->
+    <LinearLayout
+        android:id="@+id/postLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text=" Posted Messages"
+            android:background="@color/home_button"
+            android:textColor="@color/tect_color_white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/postAvailable"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text=" No posts are available !!!"
+            android:textColor="@color/register_color"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"/>
+        <ListView
+            android:id="@+id/postList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/extraLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:orientation="vertical"></LinearLayout>
+
+    <Button
+        android:id="@+id/addContct"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Add"
+        android:layout_margin="20dp"
+        android:textColor="@color/tect_color_white"
+        android:textSize="25dp"
+        android:visibility="gone"
+        android:background="@color/home_highted" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Delete"
+        android:layout_margin="20dp"
+        android:textColor="@color/tect_color_white"
+        android:textSize="25dp"
+        android:background="@color/pharma_actscor_blue03" />
+
+
+</LinearLayout>

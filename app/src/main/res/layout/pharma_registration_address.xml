@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@mipmap/register_bg"
+
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_logo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_tendp"
+
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/medrep_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/notification_header_height"
+        android:src="@mipmap/logo_regester" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_tendp"
+        android:src="@mipmap/page_nav_icon"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"/>
+    </LinearLayout>
+
+   <!-- <TextView
+        android:id="@+id/addressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="150dp"
+        android:text="@string/address"
+        android:textColor="@color/tect_color_white"
+        android:textSize="@dimen/text_size_edit" />
+
+    <ImageView
+        android:id="@+id/removeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@id/addressTextView"
+        android:src="@mipmap/minus" />-->
+
+
+    <!--android:textColor="@color/home_button_text"-->
+
+    <EditText
+        android:id="@+id/edittext_address_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_logo"
+
+        android:layout_marginLeft="@dimen/reg_margin"
+        android:layout_marginRight="@dimen/reg_margin"
+        android:background="@color/home_button_text"
+        android:hint="@string/address_line_1_hint"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size_edit" />
+
+    <EditText
+        android:id="@+id/edittext_address_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittext_address_one"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/reg_margin"
+        android:layout_marginRight="@dimen/reg_margin"
+        android:background="@color/home_button_text"
+        android:hint="@string/address_line_2_hint"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size_edit" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittext_address_two"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/reg_margin"
+        android:layout_marginRight="@dimen/reg_margin"
+        android:weightSum="2">
+
+        <EditText
+            android:id="@+id/edittext_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/home_button_text"
+            android:hint="@string/state_hint"
+            android:padding="15dp"
+            android:singleLine="true"
+
+            android:textColor="#000000"
+            android:textSize="@dimen/text_size_edit" />
+
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp" />
+
+        <EditText
+            android:id="@+id/edittext_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_state"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/home_button_text"
+            android:hint="@string/city_hint"
+            android:padding="15dp"
+            android:textColor="#000000"
+            android:textSize="@dimen/text_size_edit" />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/edittext_zipcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_city"
+        android:layout_marginTop="10dp"
+        android:background="@color/home_button_text"
+        android:hint="@string/zipcode_hint"
+        android:layout_marginLeft="@dimen/reg_margin"
+        android:layout_marginRight="@dimen/reg_margin"
+        android:padding="15dp"
+        android:inputType="number"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size_edit" />
+
+
+
+
+        <include
+            android:layout_below="@id/edittext_zipcode"
+            android:layout_marginLeft="@dimen/create_appointment_text_siize"
+            android:layout_marginRight="@dimen/create_appointment_text_siize"
+            android:layout_marginTop="@dimen/abc_action_bar_stacked_max_height"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/reg_button" />
+
+
+
+
+</RelativeLayout>

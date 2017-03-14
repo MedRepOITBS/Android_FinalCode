@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/specialist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Testing"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/register_color"/>
+    <TextView
+        android:id="@+id/fromTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aug 2015 - Aug 2016"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/d_gray"/>
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Apollo Hospital, Hyderabad"/>
+
+</LinearLayout>

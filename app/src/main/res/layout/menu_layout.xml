@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:id="@+id/child_layout"
+    android:animateLayoutChanges="true">
+    <LinearLayout
+        android:id="@+id/transparentArea"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:background="#80000000"></LinearLayout>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants">
+        <ListView
+            android:id="@+id/list_slidermenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:choiceMode="singleChoice"
+            android:divider="#e1dfde"
+            android:paddingRight="1sp"
+            android:background="@drawable/border_menu"
+            android:dividerHeight="1dp"
+            android:headerDividersEnabled="false"
+            android:alpha="0.97"/>
+        </LinearLayout>
+
+            <!--android:paddingTop="8sp"-->
+            <!--android:paddingBottom="8sp"-->
+</RelativeLayout>

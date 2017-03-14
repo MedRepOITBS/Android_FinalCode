@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/noti_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/notification_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_header_height"
+        android:layout_alignParentTop="true"
+        layout="@layout/doc_notifiaction_header" />
+
+    <ImageView
+        android:id="@+id/notif_img"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/notification_header"
+        android:layout_marginBottom="@dimen/inside_not_marg"
+        android:layout_marginTop="@dimen/inside_not_marg"
+
+       />
+
+    <RelativeLayout
+        android:id="@+id/spinner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/notif_img"
+        android:background="@color/tect_color_white" >
+
+        <Spinner
+            android:id="@+id/brand_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:prompt="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/right_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:src="@mipmap/checked" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/brand_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/spinner_layout"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="@dimen/brand_listview_margin"
+        android:paddingRight="@dimen/brand_listview_margin"
+        android:dividerHeight="10dp" />
+
+    <TextView android:id="@+id/emptyElement"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Select therapeutic area."
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/notification_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/doc_notification_footer"
+        android:visibility="gone" />
+
+</RelativeLayout>

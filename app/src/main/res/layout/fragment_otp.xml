@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="medrep.medrep.OTPActivity">
+
+    <ImageView android:id="@+id/nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/page_nav3_icon"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_margin="20dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/whyThis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:text="Why This?"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/tect_color_white"/>
+
+            <Spinner
+                android:id="@+id/registrationYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/tect_color_white"
+                android:layout_marginBottom="20dp"
+                android:prompt="@string/app_name"
+                android:outlineProvider="bounds" />
+
+            <Spinner
+                android:id="@+id/stateMedicalCouncil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/tect_color_white"
+                android:layout_marginBottom="20dp"
+                android:prompt="@string/app_name"
+                android:outlineProvider="bounds" />
+
+
+            <Spinner
+                android:id="@+id/therapeutic_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/tect_color_white"
+                android:layout_marginBottom="20dp"
+                android:prompt="@string/app_name"
+              android:outlineProvider="bounds" />
+
+            <EditText android:id="@+id/email_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/password"
+                android:padding="10dp"
+
+                android:password="true"
+                android:singleLine="true"
+                android:drawablePadding="10dp"
+                android:hint="@string/desired_pwd"
+                android:background="@color/home_button_text"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#DFDFDF"/>
+
+            <EditText android:id="@+id/pwd_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:password="true"
+                android:padding="8dp"
+                android:drawablePadding="10dp"
+                android:singleLine="true"
+                android:hint="@string/repeat_pwd"
+                android:drawableLeft="@mipmap/password"
+                android:background="@color/home_button_text"/>
+            <requestFocus/>
+            <Button android:id="@+id/saveButton" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home_button"
+                android:textColor="@color/home_button_text"
+                android:text="@string/submit" />
+        </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/d_gray"
+    tools:context="medrep.medrep.AddProfileViewActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/edit_profile_titlebar"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <TextView
+                android:id="@+id/designation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESIGNATION*"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/notification_header_color"
+                android:fontFamily="Helvetica Neue Regular"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/designationText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint=" Designation"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners"/>
+
+            <TextView
+                android:id="@+id/organisation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ORGANISATION*"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/notification_header_color"
+                android:fontFamily="Helvetica Neue Regular"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/organisationText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:hint=" Organisation"
+                android:background="@drawable/white_background_rounded_corners"/>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOCATION*"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/notification_header_color"
+                android:fontFamily="Helvetica Neue Regular"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/locationText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:hint=" Location"
+                android:background="@drawable/white_background_rounded_corners"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CURRENT JOB"
+                android:textColor="@color/notification_header_color"
+                android:textSize="20sp"
+                android:fontFamily="Helvetica Neue Regular"
+                android:layout_marginTop="20dp"
+                android:checked="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="FROM*"
+                    android:textSize="20sp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:fontFamily="Helvetica Neue Regular"
+                    android:textColor="@color/notification_header_color"/>
+                <Button
+                    android:id="@+id/month"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="7"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/white_background_rounded_corners"
+                    android:text="DD-MM-YYYY"
+                    android:textColor="@color/notification_header_color"/>
+
+                <!--<Button-->
+                    <!--android:id="@+id/year"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_marginLeft="7dp"-->
+                    <!--android:background="@drawable/white_background_rounded_corners"-->
+                    <!--android:text="2016"-->
+                    <!--android:textAlignment="viewStart"/>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="TO*"
+                    android:textSize="20sp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:fontFamily="Helvetica Neue Regular"
+                    android:textColor="@color/notification_header_color"/>
+                <Button
+                    android:id="@+id/toDate"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="7"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/white_background_rounded_corners"
+                    android:text="DD-MM-YYYY"
+                    android:textColor="@color/notification_header_color" />
+
+                <!--<Button-->
+                <!--android:id="@+id/year"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_marginLeft="7dp"-->
+                <!--android:background="@drawable/white_background_rounded_corners"-->
+                <!--android:text="2016"-->
+                <!--android:textAlignment="viewStart"/>-->
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SUMMARY"
+                android:layout_marginTop="20dp"
+                android:fontFamily="Helvetica Neue Regular"
+                android:textColor="@color/notification_header_color"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/summaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="100dp"
+                android:maxLines="10"
+                android:lines="5"
+                android:inputType="textMultiLine"
+                android:background="@drawable/white_background_rounded_corners"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

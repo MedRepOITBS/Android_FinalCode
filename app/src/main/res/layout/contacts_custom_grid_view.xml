@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/doctorImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:focusable="false"
+        android:background="@drawable/circle_image_view"
+        android:src="@drawable/doctor_image"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/doctorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="John Deo"
+            android:textColor="@color/silver"/>
+
+        <TextView
+            android:id="@+id/specialistIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="ortho"
+            android:textColor="@color/pharma_list_item_text_grey"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+</LinearLayout>

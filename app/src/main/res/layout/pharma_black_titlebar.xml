@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/lin_back"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/notification_header_height"
+        android:background="@android:color/black" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+
+            android:src="@drawable/back_icon" />
+
+        <TextView
+
+            android:id="@+id/back_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_tendp"
+            android:drawablePadding="15dp"
+            android:paddingLeft="20dp"
+            android:singleLine="true"
+            android:text="DOCTOR DETAILS"
+            android:textColor="@color/tect_color_white"
+            android:textSize="@dimen/notification_header_text_size" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_margin="@dimen/reg_margin"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/page_nav2_icon"
+
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:id="@+id/addressTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:textSize="13dp"
+            android:layout_margin="7dp"
+            android:drawablePadding="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="@dimen/reg_margin"
+            android:drawableLeft="@mipmap/doc_register_navigation_icon"
+            android:textColor="@color/tect_color_white"
+            android:text="@string/address"></TextView>
+
+        <TextView
+            android:id="@+id/whyThis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:text="Why This?"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/tect_color_white"/>
+    </LinearLayout>
+    <TableLayout
+        style="@style/layout_f_w"
+        android:stretchColumns="*" >
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:background="@android:color/transparent"
+            style="@style/layout_wrap">
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/lay"
+                android:layout_width="match_parent"
+                android:weightSum="2">
+
+            <!-- First Tab -->
+
+
+            <LinearLayout
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                style="@style/layout_f_w"
+                android:id="@+id/first_text"
+
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/hospital_icon"/>
+
+            </LinearLayout>
+
+            <!-- Second Tab -->
+            <LinearLayout
+                android:layout_width="0dp" android:layout_weight="1"
+                style="@style/layout_f_w"
+                android:id="@+id/second_text"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:src="@mipmap/private_clinic"/>
+
+
+
+            </LinearLayout>
+</LinearLayout>
+        </TableRow>
+    </TableLayout>
+    <!-- Include Tab Indicator  -->
+    <include layout="@layout/indicator" android:layout_width="fill_parent" android:layout_height="wrap_content"  />
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent" android:layout_height="fill_parent"
+        android:id="@+id/viewPager" />
+
+</LinearLayout>

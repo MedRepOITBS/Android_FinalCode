@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.app.fragments.DoctorNavigationDrawerFragment"
+    android:background="#3DC9AF">
+
+    <!--<ImageView android:id="@+id/profile_img"
+        android:layout_width="200dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="@dimen/imagemargin_top"
+        android:layout_marginBottom="16dp"
+        android:src="@mipmap/logo"/>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>

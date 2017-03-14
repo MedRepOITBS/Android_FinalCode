@@ -1,0 +1,187 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="medrep.pharma.DashBoard">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1899DD"
+            android:orientation="vertical"
+            android:padding="@dimen/abc_action_bar_default_padding_material">
+
+
+            <TextView
+                android:id="@+id/pharma_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="@dimen/margin_small"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="@string/dashboard_title"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/abc_text_size_medium_material" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/header_slider"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@mipmap/banner"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF0000"
+                android:layout_gravity="end"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="end"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/tv_latest_notificaation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/margin_small"
+                    android:drawableRight="@mipmap/notifications_red"
+                    android:text="@string/lates_notification"
+                    android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1AB897"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/appointments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/margin_small"
+                android:text="@string/Appointments"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/abc_dialog_padding_material" />
+        </LinearLayout>
+        <!--dashboard-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_dialog_heading"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_weight="1.8"
+                    android:background="@drawable/dashboardbox_shape"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    android:id="@+id/gallery_layout">
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_getAppaointment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_weight="1.5"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/margin_small"
+
+                        android:paddingTop="@dimen/margin_small">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr.Madhulatha"
+                            android:gravity="left"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/name_designation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Paracetamal"
+                            android:gravity="right"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/margin_tendp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/margin_small"
+                        android:paddingTop="@dimen/margin_small">
+
+                        <TextView
+                            android:id="@+id/month_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="AUG"
+                            android:textColor="@android:color/black"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/date_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="03"
+                            android:textColor="#0bbfb6"
+                            android:textSize="@dimen/margin_tendp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <!--end dashboard-->
+    </LinearLayout>
+</ScrollView>
+

@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="medrep.medrep">
+
+    <uses-sdk android:minSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- <uses-permission android:name="android.permission."/> -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- Gcm Related Stuff -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <permission
+        android:name="medrep.medrep.permission.C2D_MESSAGE"
+        android:largeHeap="true"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="medrep.medrep.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/launching_icon"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeScreenActivity"
+            android:label="@string/title_activity_home_screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterCategoryActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".RegisterDoctorActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".RegisterDoctorAddressAct"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DoctorSetPasswordActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DoctorOTP_Activity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".OTPActivity"
+            android:label="@string/title_activity_otp"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:screenOrientation="portrait">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ImageViewerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DoctorDashboard"
+            android:label="@string/title_activity_sign_in_drawer"
+            android:screenOrientation="portrait">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".DoctorGetProfileWats"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.PharmaDashBoard"
+            android:fitsSystemWindows="true"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait"
+            android:windowTranslucentStatus="true" />
+        <activity
+            android:name="pharma.PharmaProductCompaign"
+            android:fitsSystemWindows="true"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait"
+            android:windowTranslucentStatus="true" />
+        <activity
+            android:name="pharma.PharmaNotificationDetails"
+            android:fitsSystemWindows="true"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait"
+            android:windowTranslucentStatus="true" />
+        <activity
+            android:name="pharma.PharmaCampainDetails"
+            android:fitsSystemWindows="false"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.PharmaNewProductCampain"
+            android:fitsSystemWindows="false"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.PharmaActivityScoreDetails"
+            android:fitsSystemWindows="false"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.PharmaManagerDashboard"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.TeamActivity"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.PharmaRepAppointments"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaRepAppointmentActivity"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaRepDetails"
+            android:fitsSystemWindows="false"
+            android:label="@string/title_activity_forgot_password"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaCompanyDoctors"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaRepDashboard"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.PharmaRepMyAppointmentsActivity"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaRepMyAppointmentActivity"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaRepAppointmentsActivity"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DoctorMyActivityScore"
+            android:fitsSystemWindows="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.PharmaUpdateActivity"
+            android:fitsSystemWindows="false"
+            android:label="@string/title_activity_sign_in_drawer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="pharma.PharmaRegistationAddress"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="pharma.Phrama_Reg_zero"
+            android:label="@string/pharma"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PhramaRegistrationTwo"
+            android:label="@string/pharma1"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaRegisterThree"
+            android:label="@string/pharma1"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.GenerateOTPActivity"
+            android:label="@string/pharma1"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.ValidateOtpActivity"
+            android:label="@string/pharma1"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.ResendOTPActivity"
+            android:label="@string/pharma1"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaConvertedToAppiontment"
+            android:label="@string/pharma1"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaDocterDetails"
+            android:label="@string/pharma1"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaDoctorNotificationStatsActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.PharmaBrochureActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="pharma.BrochureViewerActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <receiver android:name="com.app.reminder.AlarmReceiver" />
+
+        <activity
+            android:name=".DoctorsMyContactActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".DoctorMyGroupsActivty"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".DoctorPostsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".DoctorParticularGroupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".DoctorNotificationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".NoContactActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AddContactActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".TransformActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".TransformDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".SearchForDrugsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".CreateGroupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ServeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ShareActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AddMembersActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".SuggestedContactsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ContactsMoreOptionsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".GroupMoreActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AddGroupMembersActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MobileContactsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- Gcm Related Stuff -->
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="medrep.medrep" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GCMNotificationIntentService" />
+
+        <activity
+            android:name=".AllContactsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProfileViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProfileContactInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProfileAddressInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".AddProfileViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProfilePublicationsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProfileEducationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProfileInterestAreaActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProfileAwardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ShareParticularActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".EditContactInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".EditLocationActivity" />
+        <!--
+     ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. 
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        -->
+        <activity android:name=".LatestSurveyReportsActivity" />
+        <activity android:name=".SurveyDetailsActivity" />
+        <activity android:name=".MarketingCampaignsActivity"></activity>
+	
+	<activity android:name=".AppointmentDetailsActivity">
+            android:windowSoftInputMode="stateHidden|adjustPan"
+        </activity>
+    </application>
+
+</manifest>

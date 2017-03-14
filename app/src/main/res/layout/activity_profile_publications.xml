@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="medrep.medrep.ProfilePublicationsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/edit_profile_titlebar" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/articleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="Helvetica Neue Regular"
+                android:text="ARTICLE TITLE*"
+                android:textColor="@color/register_color"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/articleTitleText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners"
+                android:hint=" Article Title" />
+
+            <TextView
+                android:id="@+id/publication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="Helvetica Neue Regular"
+                android:text="PUBLICATION*"
+                android:textColor="@color/register_color"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/publicationText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners"
+                android:hint=" Start typing to get suggestions" />
+
+            <TextView
+                android:id="@+id/Year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="Helvetica Neue Regular"
+                android:text="YEAR*"
+                android:textColor="@color/register_color"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/yearText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners" />
+
+            <TextView
+                android:id="@+id/ref_url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="Helvetica Neue Regular"
+                android:text="Publication Reference URL"
+                android:textColor="@color/register_color"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_ref_url"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_background_rounded_corners"
+                android:hint="https://www.xyz.com" />
+
+            <Button
+                android:id="@+id/goto_details"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Go To Details"
+                android:textColor="@color/tect_color_white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="Helvetica Neue Regular"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:background="@color/notification_header_color"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

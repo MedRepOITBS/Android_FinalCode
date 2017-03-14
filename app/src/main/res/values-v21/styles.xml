@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+       <!--<item name="android:colorPrimary">#673AB7</item>
+        <item name="android:colorPrimaryDark">#1899DD</item>
+        <item name="android:colorAccent">#FF4081</item>
+        <item name="android:windowTranslucentStatus">true</item>-->
+    </style>
+    <style name="MyRadioButtonStyle" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/custom_btn_radio</item>
+    </style>
+
+
+
+
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@mipmap/star</item>
+        <item name="android:minHeight">23dip</item>
+        <item name="android:maxHeight">25dip</item>
+    </style>
+
+</resources>

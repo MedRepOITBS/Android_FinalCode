@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="medrep.medrep.WelcomeActivity">
+
+    <!--<TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />-->
+
+    <FrameLayout android:id="@+id/register_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/welcome_bg"/>
+
+    <com.app.util.RoundedImageView android:id="@+id/welcomeImageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/playstore_icon"/>
+
+    <!--<ImageView android:id="@+id/welcomeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/playstore_icon"/>-->
+
+    <TextView android:id="@+id/greatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/home_button_text"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:layout_below="@id/welcomeImageView"
+        android:text="@string/great"/>
+
+    <TextView android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/home_button_text"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:layout_below="@id/greatTextView"
+        android:text="@string/welcome"/>
+
+    <TextView android:id="@+id/photoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/home_button_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:layout_below="@id/welcomeTextView"
+        android:drawableLeft="@mipmap/camara_icon"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:layout_centerInParent="true"
+        android:text="@string/addphoto"/>
+
+    <Button android:id="@+id/startedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/home_button"
+        android:textColor="@color/home_button_text"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+
+        android:layout_below="@id/login_layout"
+        android:text="@string/started" />
+
+</RelativeLayout>

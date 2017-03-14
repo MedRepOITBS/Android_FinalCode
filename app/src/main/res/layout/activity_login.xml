@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="medrep.medrep.LoginActivity">
+
+    <!-- <FrameLayout android:id="@+id/home_layout"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@mipmap/home_bg"/>-->
+
+    <!--<ImageView
+        android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/home_bg"
+        android:scaleType="matrix"/>-->
+
+
+    <TextView
+        android:id="@+id/medrep_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:drawableLeft="@mipmap/logo"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/app_name"
+        android:textColor="@color/home_button_text"
+        android:textSize="25dp" />
+
+    <!--android:layout_below="@+id/medrep_textview"-->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/medrep_textview">
+
+        <LinearLayout
+            android:id="@+id/login_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/margin_tendp1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/email_edittext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/notification_header_height"
+                android:layout_marginLeft="@dimen/margin_tendp1"
+                android:layout_marginRight="@dimen/margin_tendp1"
+                android:background="@color/home_button_text"
+                android:drawableLeft="@mipmap/password"
+                android:drawablePadding="@dimen/margin_tendp1"
+                android:padding="@dimen/margin_tendp1"
+                android:hint="@string/email_id"
+                android:singleLine="true" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="@dimen/margin_tendp1"
+                android:layout_marginRight="@dimen/margin_tendp1"
+                android:background="#DFDFDF" />
+
+            <EditText
+                android:id="@+id/pwd_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/notification_header_height"
+                android:background="@color/home_button_text"
+                android:drawableLeft="@mipmap/password"
+                android:drawablePadding="@dimen/margin_tendp1"
+                android:hint="@string/password"
+                android:password="true"
+                android:padding="@dimen/margin_tendp1"
+                android:layout_marginLeft="@dimen/margin_tendp1"
+                android:layout_marginRight="@dimen/margin_tendp1"
+                android:singleLine="true" />
+
+
+            <Button
+                android:id="@+id/signButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login_layout"
+                android:background="@color/home_button"
+                android:text="@string/sign_in"
+                android:layout_marginTop="@dimen/margin_tendp1"
+                android:layout_marginLeft="@dimen/margin_tendp1"
+                android:layout_marginRight="@dimen/margin_tendp1"
+                android:textColor="@color/home_button_text" />
+
+            <TextView
+                android:id="@+id/forgotTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/signButton"
+                android:gravity="center|center_horizontal"
+                android:layout_marginTop="@dimen/margin_tendp1"
+                android:layout_marginLeft="@dimen/margin_tendp1"
+                android:padding="@dimen/margin_tendp1"
+                android:text="@string/forgot"
+                android:textSize="@dimen/margin_tendp"
+                android:textColor="@color/home_button_text" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

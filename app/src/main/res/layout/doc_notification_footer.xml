@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:weightSum="2"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/favourite_button"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="@color/home_highted"
+        android:text="Favorites"
+        android:textColor="@color/home_button_text" />
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:background="@color/home_button_bar" />
+
+    <Button
+        android:id="@+id/read_notificaions_button"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="@color/home_button"
+        android:text="Read Notifications"
+        android:textColor="@color/home_button_text" />
+</LinearLayout>

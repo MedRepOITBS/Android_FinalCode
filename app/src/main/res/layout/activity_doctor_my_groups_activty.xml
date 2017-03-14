@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<RelativeLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:id="@+id/dashboard">-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@mipmap/noti_bg">
+        <include layout="@layout/common_layout"/>
+        <TextView
+            android:id="@+id/noGroups"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Looks like you don't have any groups"
+            android:textColor="@color/register_color"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/navigateCreateGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+
+        <!--search, group and add layout -->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:padding="10dp"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<AutoCompleteTextView-->
+                <!--android:id="@+id/searchConnections"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="0.5"-->
+                <!--android:background="@color/d_gray"-->
+                <!--android:hint="Connections"-->
+                <!--android:gravity="center|center_vertical"-->
+                <!--android:textColorHint="@color/silver"/>-->
+            <!--<ImageButton-->
+                <!--android:id="@+id/SearchButton"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:background="@mipmap/search_1"/>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="0.2">-->
+
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="0.3"-->
+                <!--android:orientation="horizontal">-->
+                <!--<ImageButton-->
+                    <!--android:id="@+id/groupButton"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:background="@color/tect_color_white"-->
+                    <!--android:src="@mipmap/building_iocn"/>-->
+
+                <!--<ImageButton-->
+                    <!--android:id="@+id/addButton"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:background="@color/tect_color_white"-->
+                    <!--android:src="@mipmap/add_icon"/>-->
+
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+            <ListView
+                android:id="@+id/groupListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:isScrollContainer="false"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:background="@color/pharma_actscor_textcolor">-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="horizontal">-->
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/myContactHighlightLayout"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:gravity="center">-->
+                    <!--<Button-->
+                        <!--android:id="@+id/myGroupsButton"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:text="My Groups"-->
+                        <!--android:textAllCaps="false"-->
+                        <!--android:background="@color/pharma_actscor_textcolor"-->
+                        <!--android:textColor="@color/notification_header_color"-->
+                        <!--android:textSize="10dp"-->
+                        <!--android:drawableTop="@mipmap/p_doctor"/>-->
+
+                <!--</LinearLayout>-->
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/suggestedGroupsLayout"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:gravity="center">-->
+                    <!--<Button-->
+                        <!--android:id="@+id/suggestedGroupsButton"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:text="Suggested Groups"-->
+                        <!--android:textColor="@color/d_gray"-->
+                        <!--android:textSize="10dp"-->
+                        <!--android:textAllCaps="false"-->
+                        <!--android:background="@color/pharma_actscor_textcolor"-->
+                        <!--android:drawableTop="@mipmap/p_doctor" />-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="65dp"-->
+            <!--android:orientation="horizontal">-->
+            <!--<Button-->
+                <!--android:id="@+id/connect"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/home_highted"-->
+                <!--android:text="@string/connect"-->
+                <!--android:textColor="@color/tect_color_white"-->
+                <!--android:textSize="@dimen/notification_header_text_size"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:singleLine="true"/>-->
+            <!--<Button-->
+                <!--android:id="@+id/transform"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/home_button"-->
+                <!--android:text="@string/transform"-->
+                <!--android:textColor="@color/tect_color_white"-->
+                <!--android:textSize="@dimen/notification_header_text_size"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:paddingLeft="2dp"-->
+                <!--android:singleLine="true"/>-->
+            <!--<Button-->
+                <!--android:id="@+id/share"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/home_button"-->
+                <!--android:text="@string/share"-->
+                <!--android:paddingLeft="2dp"-->
+                <!--android:textColor="@color/tect_color_white"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textSize="@dimen/notification_header_text_size"/>-->
+            <!--<Button-->
+                <!--android:id="@+id/serve"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/home_button"-->
+                <!--android:text="@string/serve"-->
+                <!--android:paddingLeft="2dp"-->
+                <!--android:textColor="@color/tect_color_white"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textSize="@dimen/notification_header_text_size"/>-->
+        <!--</LinearLayout>-->
+    <include layout="@layout/common_tabs"/>
+
+    </LinearLayout>
+<!--</RelativeLayout>-->

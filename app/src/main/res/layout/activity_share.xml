@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="medrep.medrep.ShareActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_layout"/>
+
+    <TextView
+        android:id="@+id/noPosts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Posts are shared yet !!!"
+        android:textColor="@color/register_color"
+        android:textSize="20dp"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/doctorPostListView"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:isScrollContainer="false"
+        android:background="@mipmap/noti_bg"/>
+
+    <include layout="@layout/common_tabs"/>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="65dp"-->
+        <!--android:orientation="horizontal">-->
+        <!--<Button-->
+            <!--android:id="@+id/connect"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/home_button"-->
+            <!--android:drawableTop="@drawable/connect"-->
+            <!--android:text="@string/connect"-->
+            <!--android:textColor="@color/tect_color_white"-->
+            <!--android:textSize="@dimen/notification_header_text_size"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:singleLine="true"/>-->
+        <!--<Button-->
+            <!--android:id="@+id/transform"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/home_button"-->
+            <!--android:drawableTop="@drawable/connect"-->
+            <!--android:text="@string/transform"-->
+            <!--android:textColor="@color/tect_color_white"-->
+            <!--android:textSize="@dimen/notification_header_text_size"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:paddingLeft="2dp"-->
+            <!--android:singleLine="true"/>-->
+        <!--<Button-->
+            <!--android:id="@+id/share"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/home_highted"-->
+            <!--android:drawableTop="@drawable/connect"-->
+            <!--android:text="@string/share"-->
+            <!--android:paddingLeft="2dp"-->
+            <!--android:textColor="@color/tect_color_white"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textSize="@dimen/notification_header_text_size"/>-->
+        <!--<Button-->
+            <!--android:id="@+id/serve"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/home_button"-->
+            <!--android:drawableTop="@drawable/connect"-->
+            <!--android:text="@string/serve"-->
+            <!--android:paddingLeft="2dp"-->
+            <!--android:textColor="@color/tect_color_white"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textSize="@dimen/notification_header_text_size"/>-->
+    <!--</LinearLayout>-->
+
+</LinearLayout>

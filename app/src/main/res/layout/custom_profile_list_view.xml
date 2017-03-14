@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/topicIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@mipmap/raido_selected" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/topicIcon"
+            android:textColor="@color/register_color"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/addData"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/edit_mr" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp">
+
+            <ImageView
+                android:id="@+id/blt"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/abc_btn_radio_to_on_mtrl_015" />
+
+            <TextView
+                android:id="@+id/specialist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/blt"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="dfgdskjfhdsjfds"
+                android:textColor="@color/register_color"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/cancel_mr" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/fromTo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="55dp"
+            android:textColor="@color/d_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="55dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

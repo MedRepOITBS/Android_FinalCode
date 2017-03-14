@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="@color/light_blue"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="10">
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:background="@color/light_blue">
+
+            <com.app.util.RoundedQuickContactBadge
+                android:id="@+id/photoView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:id="@+id/change_pic"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="5dp"
+                android:src="@drawable/edit_mr"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/personName"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="Dinesh"
+            android:textColor="@color/pharma_list_item_light_black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/personAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Kurnool, India"
+            android:textColor="@color/pharma_list_item_light_black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/tect_color_white"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="40dp"
+            android:text="SPECIALTY"
+            android:textColor="@color/register_color"
+            android:textSize="21sp"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/specialistText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:text="Endocrinology"
+            android:textColor="@color/register_color"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="medrep.medrep.ProfileEducationActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/edit_profile_titlebar"/>
+    </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AGGREGATE*"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/notification_header_color"
+            android:fontFamily="Helvetica Neue Regular"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/aggregateText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint=" Aggregate Percentage"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_background_rounded_corners"/>
+
+        <TextView
+            android:id="@+id/Degree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEGREE*"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/notification_header_color"
+            android:fontFamily="Helvetica Neue Regular"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/degreeText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint=" For eg. MBBS, MD, DGO, FRCS, etc."
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_background_rounded_corners"/>
+
+        <TextView
+            android:id="@+id/specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SPECIALTY*"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/notification_header_color"
+            android:fontFamily="Helvetica Neue Regular"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/specialtyText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint=" Specialty"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_background_rounded_corners"/>
+
+        <TextView
+            android:id="@+id/institute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="INSTITUTE*"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/notification_header_color"
+            android:fontFamily="Helvetica Neue Regular"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/instituteText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint=" Institute"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_background_rounded_corners"/>
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FROM*"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/notification_header_color"
+            android:fontFamily="Helvetica Neue Regular"
+            android:textSize="20sp"/>
+        <Spinner
+            android:id="@+id/fromText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_background_rounded_corners"/>
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To*"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/notification_header_color"
+            android:fontFamily="Helvetica Neue Regular"
+            android:textSize="20sp"/>
+        <Spinner
+            android:id="@+id/toText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_background_rounded_corners"/>
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

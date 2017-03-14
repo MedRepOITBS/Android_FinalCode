@@ -1,0 +1,42 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="activity_register_margin">32dp</dimen>
+    <dimen name="imagemargin_top">24dp</dimen>
+
+    <dimen name="brand_listview_margin">15dp</dimen>
+    <dimen name="notification_header_height">48dp</dimen>
+    <dimen name="notification_header_text_size">18dp</dimen>
+    <dimen name="inside_not_marg">15dp</dimen>
+
+    <dimen name="feedback_marg">20dp</dimen>
+    <dimen name="rtbarht">16dp</dimen>
+
+    <dimen name="create_appointment_text_siize">16dp</dimen>
+    <dimen name="create_appointment_text_siize_header">20dp</dimen>
+    <dimen name="create_appointment_margin">30dp</dimen>
+    <dimen name="create_appointment_drabale_padding">14dp</dimen>
+    <dimen name="create_appointment_text_padding">35dp</dimen>
+    <dimen name="text_dialog_heading">20sp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_tendp">15dp</dimen>
+    <dimen name="margin_tendp1">10dp</dimen>
+    <dimen name="dialog_minwidth">300dp</dimen>
+
+    <!--register screen-->
+    <dimen name="text_size_edit">15dp</dimen>
+    <dimen name="reg_margin">15dp</dimen>
+    <dimen name="create_app_button_text_size">20sp</dimen>
+
+    <!--Profile screen-->
+    <dimen name="text_size_profile">15dp</dimen>
+    <dimen name="margintendp">10dp</dimen>
+    <dimen name="as_margintendp">10dp</dimen>
+    <dimen name="arrow_bottem">220dp</dimen>
+    <dimen name="contvt_app_marg">20dp</dimen>
+
+    <dimen name="docdetais_text">18dp</dimen>
+    <dimen name="docchain_text">18dp</dimen>
+</resources>

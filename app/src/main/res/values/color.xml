@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="home_button">#14C39C</color>
+    <color name="home_button_text">#FFFFFF</color>
+    <color name="home_button_bar">#40D3D3</color>
+    <color name="register_color">#000000</color>
+    <color name="home_highted">#1DDEB8</color>
+
+    <color name="notification_header_color">#1899DD</color>
+    <color name="tect_color_white">#FFFFFF</color>
+    <color name="d_gray">#D3D3D3</color>
+    <color name="l_blue">#9999ff</color>
+    <color name="yellow">#FFCC00</color>
+    <color name="red">#FF1300</color>
+    <color name="pink">#FF2D55</color>
+
+
+    <color name="dialog_button">#8FB83A</color>
+
+    <color name="p_notifi_list">#1899DD</color>
+
+    <color name="pharma_list_item_text_grey">#BEBEC0</color>
+    <color name="silver">#A4A4A4</color>
+    <color name="pharma_list_item_light_black">#A1A0A5</color>
+    <color name="dark_grey">#8E8E93</color>
+
+    <color name="pharma_actscor_textcolor">#2b2937</color>
+    <color name="pharma_actscor_blue01">#2eb7d9</color>
+    <color name="pharma_actscor_blue02">#5ec9ff</color>
+    <color name="pharma_actscor_blue03">#d07475</color>
+    <color name="light_blue">#D1EEFC</color>
+    <color name="orange">#FF5E3A</color>
+</resources>

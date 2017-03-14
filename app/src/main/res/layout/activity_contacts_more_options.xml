@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/tect_color_white">
+
+    <include layout="@layout/common_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <ListView
+            android:id="@+id/contactsListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:isScrollContainer="false"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/addContactButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Add"
+        android:textColor="@color/tect_color_white"
+        android:textSize="20dp"
+        android:background="@drawable/green_backgroud_with_round_corners"
+        android:layout_margin="10dp"/>
+</LinearLayout>

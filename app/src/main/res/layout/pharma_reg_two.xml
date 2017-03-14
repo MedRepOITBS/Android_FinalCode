@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/register_bg"
+    android:orientation="vertical">
+
+    <!-- android:background="@mipmap/register_bg"-->
+    <!--android:layout_marginLeft="@dimen/create_appointment_text_siize"
+                    android:layout_marginRight="@dimen/create_appointment_text_siize"
+                   -->
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="@dimen/margin_tendp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/medrep_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/notification_header_height"
+                android:src="@mipmap/logo_regester" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tendp"
+                android:src="@mipmap/page_nav_icon"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"/>
+
+            <Spinner android:id="@+id/spn_compid"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:background="@color/home_button_text"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+
+                android:textSize="@dimen/text_size_edit"
+                android:layout_height="wrap_content" />
+            <!--<TextView
+                android:id="@+id/company_name_tv"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:background="@color/home_button_text"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+
+                android:textSize="@dimen/text_size_edit"
+                android:layout_height="wrap_content" />-->
+
+            <EditText android:id="@+id/edittext_firstname"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:inputType="textCapSentences"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+                android:hint="@string/firstname_hint"
+                android:textColor="#000000"
+                android:singleLine="true"
+                android:textSize="@dimen/text_size_edit"
+                android:layout_height="wrap_content" />
+
+            <EditText android:id="@+id/edittext_lastname"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:inputType="textCapSentences"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+                android:hint="@string/lastname_hint"
+                android:textColor="#000000"
+                android:textSize="@dimen/text_size_edit"
+                android:singleLine="true"
+                android:layout_height="wrap_content" />
+
+
+
+            <EditText android:id="@+id/edittext_mobile"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:textColor="#000000"
+                android:inputType="number"
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+                android:textSize="@dimen/text_size_edit"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:hint="@string/pharma_mobile"
+                android:layout_height="wrap_content" />
+            <EditText android:id="@+id/edittext_mail"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:textColor="#000000"
+                android:inputType="textEmailAddress"
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+                android:textSize="@dimen/text_size_edit"
+
+                android:singleLine="true"
+                android:hint="@string/pharma_mailid"
+                android:layout_height="wrap_content" />
+
+
+
+
+            <EditText android:id="@+id/edit_spinner"
+                android:layout_width="match_parent"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/home_button_text"
+                android:textColor="#000000"
+                android:inputType="textCapSentences"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+                android:layout_marginLeft="@dimen/reg_margin"
+                android:layout_marginRight="@dimen/reg_margin"
+                android:textSize="@dimen/text_size_edit"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:hint="@string/pharma_spinner"
+                android:layout_height="wrap_content" />
+
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/reg_button" />
+
+
+            </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
