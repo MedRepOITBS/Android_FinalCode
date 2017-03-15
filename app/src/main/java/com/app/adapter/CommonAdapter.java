@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.Html;
+import android.text.format.DateFormat;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,7 +54,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.logging.LogRecord;
 
@@ -64,6 +67,7 @@ import medrep.medrep.AllContactsActivity;
 import medrep.medrep.ContactsMoreOptionsActivity;
 import medrep.medrep.DoctorMyGroupsActivty;
 import medrep.medrep.DoctorParticularGroupActivity;
+import medrep.medrep.DoctorPostsActivity;
 import medrep.medrep.DoctorsMyContactActivity;
 import medrep.medrep.GroupMoreActivity;
 import medrep.medrep.LoginActivity;
@@ -270,7 +274,7 @@ public class CommonAdapter extends BaseAdapter {
                 String lastName = object.getString("lastName");
                 String fullName = firstName +" "+ lastName;
                 TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
-                doctorName.setText("Dr. "+ fullName);
+                doctorName.setText(fullName);
                 String doctotSpecialist = object.getString("therapeuticArea");
                 TextView specialistIn = (TextView)convertView.findViewById(R.id.specialistIn);
                 specialistIn.setText(doctotSpecialist);
@@ -304,7 +308,7 @@ public class CommonAdapter extends BaseAdapter {
                 String lastName = object.getString("lastName");
                 String fullName = firstName + " " + lastName;
                 TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
-                doctorName.setText("Dr. " + fullName);
+                doctorName.setText(fullName);
                 String specalist = object.getString("therapeuticDesc");
                 TextView doctorSpecialist = (TextView)convertView.findViewById(R.id.doctorSpecialist);
                 doctorSpecialist.setText(specalist);
@@ -686,6 +690,10 @@ public class CommonAdapter extends BaseAdapter {
                     TextView shareCount = (TextView)convertView.findViewById(R.id.shareCount);
                     String share = object.getString("share_count");
                     shareCount.setText(share);
+                long postedOn = object.getLong("posted_on");
+                String dateTime = getDate(postedOn);
+                TextView sharedMessageDate = (TextView)convertView.findViewById(R.id.shared_message_date);
+                sharedMessageDate.setText(dateTime);
                 final int finalPosition = position;
                 likeLayout.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -770,7 +778,56 @@ public class CommonAdapter extends BaseAdapter {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        } else if( context instanceof ProfileViewActivity) {
+        } else if(context instanceof DoctorPostsActivity) {
+
+            try {
+                JSONObject object = result.getJSONObject(position);
+                String doctorTitle = object.getString("doctor_Name");
+                //if(!doctorTitle.equals("null")) {
+                convertView = mInflater.inflate(R.layout.custom_doctor_contact_list_view, null);
+                TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
+                doctorName.setText(doctorTitle);
+                Button doctorImage = (Button)convertView.findViewById(R.id.doctorImage);
+                String doctorPic = object.getString("displayPicture");
+                if(doctorPic == null) {
+                    doctorImage.setText(doctorTitle.charAt(0));
+                } else {
+                    LoadImage loadImage = new LoadImage(doctorImage);
+                    loadImage.execute(doctorPic);
+                }
+                TextView doctorStatus = (TextView)convertView.findViewById(R.id.doctorStatus);
+                String message = object.getString("short_desc");
+                if(!message.equals("null")) {
+                    doctorStatus.setText(message);
+                } else {
+                    doctorStatus.setText("");
+                }
+
+                ImageView doctorImageShare = (ImageView) convertView.findViewById(R.id.doctorImageShare);
+                //doctorImageShare.setVisibility(View.GONE);
+                String url = object.getString("url");
+//                System.out.println("Iamge url" + url.getClass().getName());
+                if(url.length() > 10) {
+                    doctorImageShare.setVisibility(View.VISIBLE);
+                    LoadImage loadImage = new LoadImage(doctorImageShare);
+                    loadImage.execute(url);
+                } else {
+                    doctorImageShare.setVisibility(View.GONE);
+                }
+
+                LinearLayout statistics = (LinearLayout)convertView.findViewById(R.id.statistics);
+                statistics.setVisibility(View.GONE);
+                long postedOn = object.getLong("posted_on");
+                String dateTime = getDate(postedOn);
+                TextView sharedMessageDate = (TextView)convertView.findViewById(R.id.shared_message_date);
+                sharedMessageDate.setVisibility(View.VISIBLE);
+                sharedMessageDate.setText(dateTime);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        else if( context instanceof ProfileViewActivity) {
             convertView = mInflater.inflate(R.layout.custom_profile_list_view, null);
             TextView specialist = (TextView)convertView.findViewById(R.id.specialist);
             ImageView addData = (ImageView)convertView.findViewById(R.id.addData);
@@ -1188,9 +1245,9 @@ public class CommonAdapter extends BaseAdapter {
 //    }
 
     private class LoadImage extends AsyncTask<String, String, Bitmap> {
-        private Button buttonImage;
+        private View buttonImage;
 
-        private LoadImage(Button buttonImage) {
+        private LoadImage(View buttonImage) {
             this.buttonImage = buttonImage;
         }
 
@@ -1261,4 +1318,11 @@ public class CommonAdapter extends BaseAdapter {
 //            view.setImageBitmap(map);
 //        }
 //    }
+
+    private String getDate(long time) {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(time);
+        String date = DateFormat.format("dd-MM-yyyy HH:mm:ss", cal).toString();
+        return date;
+    }
 }

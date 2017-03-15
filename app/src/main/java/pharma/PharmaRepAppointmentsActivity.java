@@ -149,8 +149,8 @@ public class PharmaRepAppointmentsActivity extends AppCompatActivity implements 
             }
 
             if(appointments == null || appointments.size() == 0){
-                Toast.makeText(PharmaRepAppointmentsActivity.this, "No Appointments Found.", Toast.LENGTH_SHORT).show();
-                finish();
+//                Toast.makeText(PharmaRepAppointmentsActivity.this, "No Appointments Found.", Toast.LENGTH_SHORT).show();
+//                finish();
             }else{
                 //Set appointments adapter
                 for(Appointment appointment: appointments){

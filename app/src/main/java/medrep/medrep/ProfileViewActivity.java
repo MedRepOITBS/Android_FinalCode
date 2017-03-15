@@ -330,7 +330,7 @@ public class ProfileViewActivity extends AppCompatActivity implements GetRespons
 
 
               //  URL url = new URL("http://183.82.106.234:8080/medrep-web/uploadDP");
-                URL url = new URL("http://122.175.50.252:8080/MedRepApplication/preapi/registration/uploadDP");
+                URL url = new URL("http://183.82.106.234:8080/MedRepApplication/preapi/registration/uploadDP");
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setDoOutput(true);
                 urlConnection.setRequestMethod("POST");

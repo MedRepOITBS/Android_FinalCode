@@ -41,8 +41,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/stats2"/>
+                android:gravity="center"
+                android:src="@mipmap/loading_icon"/>
             <LinearLayout
+                android:id="@+id/statistics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -127,5 +129,15 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+    <TextView
+        android:id="@+id/shared_message_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/pharma_list_item_light_black"
+        android:textSize="20dp"
+        android:maxLines="2"
+        android:gravity="end"
+        android:ellipsize="end"
+        android:visibility="gone"/>
 
 </LinearLayout>
