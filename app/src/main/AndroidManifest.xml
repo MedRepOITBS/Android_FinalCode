@@ -417,11 +417,9 @@
         -->
         <activity android:name=".LatestSurveyReportsActivity" />
         <activity android:name=".SurveyDetailsActivity" />
-        <activity android:name=".MarketingCampaignsActivity"></activity>
-	
-	<activity android:name=".AppointmentDetailsActivity">
-            android:windowSoftInputMode="stateHidden|adjustPan"
-        </activity>
+        <activity android:name=".MarketingCampaignsActivity" />
+        <activity android:name=".MyShareActivity" />
+        <activity android:name=".ConnectActivity"></activity>
     </application>
 
 </manifest>

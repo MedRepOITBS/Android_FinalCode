@@ -48,6 +48,7 @@ public class HttpPost extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
+        System.out.println("coming here from share");
         JSONObject post_dict = new JSONObject();
         String JsonResponse = null;
         BufferedReader reader = null;

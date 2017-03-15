@@ -46,7 +46,7 @@ public class RefreshAccessToken extends AsyncTask {
         String ip = HttpUrl.COMMONURL;
         String refreshToken = RefreshToken.getRefreshToken();
         System.out.println(refreshToken);
-        String url = "http://122.175.50.252:8080/MedRepApplication/oauth/token?grant_type=refresh_token&client_id=restapp&client_secret=restapp&refresh_token=" + refreshToken;
+        String url = "http://183.82.106.234:8080/MedRepApplication/oauth/token?grant_type=refresh_token&client_id=restapp&client_secret=restapp&refresh_token=" + refreshToken;
         try {
             URL api_url = new URL(url);
             HttpURLConnection urlConnection = (HttpURLConnection)api_url.openConnection();

@@ -1,12 +1,7 @@
 package medrep.medrep;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,7 +10,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -28,7 +22,6 @@ import com.app.fragments.DoctorNavigationDrawerFragment;
 import com.app.fragments.DoctorSurveyListLV;
 import com.app.fragments.NotificationDetails;
 import com.app.interfaces.GetResponse;
-import com.app.json.SignInParser;
 import com.app.pojo.AppointmentList;
 import com.app.pojo.RefreshToken;
 import com.app.pojo.SignIn;
@@ -37,9 +30,7 @@ import com.app.pojo.SurveryList;
 import com.app.reminder.AlarmReceiver;
 import com.app.task.AppointmentsAsyncTask;
 import com.app.task.DoctorGetMethods;
-import com.app.task.DoctorPostMethods;
 import com.app.task.NotificationGetTask;
-import com.app.util.GlobalVariables;
 import com.app.util.HttpUrl;
 import com.app.util.OnSwipeTouchListener;
 import com.app.util.Utils;
@@ -49,7 +40,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -94,6 +84,13 @@ LinearLayout header_slider;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doc_dashbord1);
+        SharedPreferences singInPref = getSharedPreferences(SplashScreen.SIGNIN_PREF, MODE_PRIVATE);
+        SharedPreferences.Editor editor = singInPref.edit();
+
+        String timeStamp = getTimeStamp();
+        editor.putString("timeStamp", timeStamp);
+        editor.commit();
+
 
         if(Utils.isNetworkAvailableWithOutDialog(DoctorDashboard.this)){
             getAppointmentsList();
@@ -223,6 +220,12 @@ LinearLayout header_slider;
 
     public void getResult(String response) {
 
+    }
+
+    private String getTimeStamp() {
+        Long tsLong = System.currentTimeMillis()/1000;
+        String ts = tsLong.toString();
+        return ts;
     }
 
     public void getResponse(String response) {
@@ -376,6 +379,7 @@ LinearLayout header_slider;
     public void getSurveyList(SurveryList surveyList){
 
         ArrayList<Survery> surveysList = surveyList.getSurveryArrayList();
+        System.out.println("surveysList " + surveysList.size());
         if(surveysList != null && surveysList.size() > 0){
             DoctorSurveyListLV surveyListLV = new DoctorSurveyListLV();
             surveyListLV.setSurveyList(surveyList);
