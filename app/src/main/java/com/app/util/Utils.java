@@ -277,8 +277,8 @@ public class Utils {
     public static void DISPLAY_GENERAL_DIALOG(Activity activity, String title, String msg){
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle(title)
-                .setMessage(Html.fromHtml(msg))
-                .setPositiveButton("OK", null);
+                .setMessage(msg)
+                .setPositiveButton("Okay", null);
         builder.create().show();
     }
 

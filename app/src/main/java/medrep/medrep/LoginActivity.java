@@ -10,6 +10,8 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.pojo.SignIn;
+import com.app.task.DoctorPostMethods;
 import com.app.task.SignInTask;
 import com.app.task.VerificationOtpTask;
 import com.app.util.Config;
@@ -40,6 +43,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import pharma.PharmaDashBoard;
@@ -61,6 +65,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Context context;
     private static final String REG_ID = "regId";
     private static final String APP_VERSION = "appVersion";
+    public static Bitmap dPictureBitmap;
+    public static String profilePicture = "";
 
 
     @Override
@@ -363,6 +369,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 intent.putExtra(SplashScreen.PROFILE_NAME_KEY, profileName);
                 startActivity(intent);
                 finishAffinity();
+                if (dPictureBitmap == null) {
+                    try {
+                        String accessToken = SignIn.GET_ACCESS_TOKEN();
+                        getDisplayPic();
+                        dPictureBitmap = new DownloadImageTask().execute().get();
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                }
                 break;
             case UserRoles.PHARMA_MEDREP:
 
@@ -632,4 +647,76 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         editor.commit();
 
     }
+    /**
+     * Method running a background thread to download the profile image from web
+     */
+    private void getDisplayPic(){
+        try {
+            profilePicture = new GetDisplayPicTask().execute().get();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+    /**
+     * Class running a background thread to fetch the profile image details
+     */
+    public class GetDisplayPicTask extends AsyncTask<String, Void, String> {
+
+        private Context context = getApplicationContext();
+
+        @Override
+        protected String doInBackground(String... params) {
+            StringBuilder response = new StringBuilder();
+            try {
+                response.append(DoctorPostMethods.sendGet(HttpUrl.COMMONURL + "/getDisplayPicture?token=" + SignIn.GET_ACCESS_TOKEN()));
+                Log.d("TAG", "my response------------------------------------ " + response);
+                JSONObject jsonObject = new JSONObject(response.toString());
+                HttpUrl.displayPic = jsonObject.getString("dPicture");
+                Log.d("TAG", "my pic------------------------------------ " + HttpUrl.displayPic);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return HttpUrl.displayPic;
+        }
+
+        @Override
+        protected void onPostExecute(String o) {
+            super.onPostExecute(o);
+            try {
+                 HttpUrl.displayPic = o;
+//                SharedPreferences singInPref = getSharedPreferences("dPicture", MODE_PRIVATE);
+//                SharedPreferences.Editor editor = singInPref.edit();
+//                editor.putString("dPicture", HttpUrl.displayPic);
+//                editor.commit();
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Class running a background thread to download the profile image from web
+     */
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        Bitmap mIcon_val;
+
+        protected Bitmap doInBackground(String... urls) {
+            try {
+//                SharedPreferences signPref = getSharedPreferences("dPicture", MODE_PRIVATE);
+//                profilePicture = signPref.getString("dPicture", "User");
+                URL newurl = new URL(profilePicture);
+                mIcon_val = BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
+
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+            return mIcon_val;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+
+            dPictureBitmap = result;
+        }
+    }
+
 }

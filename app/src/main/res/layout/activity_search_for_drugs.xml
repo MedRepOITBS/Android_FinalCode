@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/drug_search">
+    android:id="@+id/parent_container"
+    android:background="@mipmap/drug_search">
     <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="50dp"-->
@@ -98,13 +99,15 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:background="#FFFFFF">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginLeft="10dp"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:padding="10dp">
                 <TextView
                     android:id="@+id/drugName"
                     android:layout_width="match_parent"
@@ -150,13 +153,16 @@
         </LinearLayout>
     </LinearLayout>
         <LinearLayout
+            android:layout_marginTop="10dp"
         android:id="@+id/relatedLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
         android:layout_marginBottom="@dimen/feedback_marg"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="gone"
+            android:background="#FFFFFF"
+            android:padding="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

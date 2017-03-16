@@ -1,20 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
-    <TextView
-        android:id="@+id/notifictionName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Notification"
-        android:textColor="@color/register_color"
-        android:textSize="25dp"/>
-    <TextView
-        android:id="@+id/notificationDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="notification Description"
-        android:paddingTop="10dp"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/rl_firstLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+
+
+        <TextView
+            android:id="@+id/appointmentName"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/background_material_dark" />
+
+        <TextView
+            android:layout_toRightOf="@+id/appointmentName"
+            android:id="@+id/appointmentDate"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:textColor="@color/notification_header_color"
+            android:textStyle="bold"
+            android:layout_gravity="right"/>
+
+        <ImageView
+            android:layout_toRightOf="@+id/appointmentDate"
+            android:layout_marginLeft="10dp"
+            android:layout_width="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:background="@mipmap/right_arrow"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@+id/rl_firstLeft"
+        android:id="@+id/appointmentDesc"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:padding="15dp"
+        android:textColor="#808080"
+        android:layout_marginTop="-30dp"
+        android:maxLength="55"/>
+
+
+</RelativeLayout>

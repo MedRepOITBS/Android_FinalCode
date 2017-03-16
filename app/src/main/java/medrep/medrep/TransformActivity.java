@@ -168,7 +168,7 @@ public class TransformActivity extends AppCompatActivity implements View.OnClick
         dropdown.setVisibility(View.GONE);
         switch (objectId) {
             case R.id.connect:
-                intent = new Intent(this, DoctorsMyContactActivity.class);
+                intent = new Intent(this, NoContactActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
                 break;
@@ -182,7 +182,7 @@ public class TransformActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.share:
                 //Utils.DISPLAY_GENERAL_DIALOG(this, "Coming Soon...", "This Feature is presently under development.");
-                intent = new Intent(this, MyShareActivity.class);
+                intent = new Intent(this, ShareActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
                 break;

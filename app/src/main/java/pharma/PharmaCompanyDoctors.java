@@ -54,7 +54,7 @@ public class PharmaCompanyDoctors extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pharma_converted_appiontment);
 
-        ((TextView)findViewById(R.id.back_tv)).setText("Doctor's Activity Score");
+        ((TextView)findViewById(R.id.back_tv)).setText("Activities");
 
         findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
             @Override

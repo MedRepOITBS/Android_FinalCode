@@ -166,7 +166,7 @@
 
 
     <!--DOc Dashboard-->
-    <string name="dashboard_title">Welcome Dr.</string>
+    <string name="dashboard_title">Welcome </string>
     <string name="lates_notification">Latest Notifications</string>
     <string name="Appointments">Appointments</string>
     <string name="Cipla">Cipla</string>

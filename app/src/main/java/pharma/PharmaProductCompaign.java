@@ -42,10 +42,9 @@ public class PharmaProductCompaign extends AppCompatActivity implements View.OnC
     PharmaProductCompaign _activity;
     ArrayList<PharmaNotification> pharmaNotifications;
 
-//    ImageView trackCompaingn;
-//    ImageView pcompanyname;
-//    LinearLayout track_new_product;
-    JSONArray jsonArray;
+    ImageView trackCompaingn;
+    ImageView pcompanyname;
+    LinearLayout track_new_product;
 
     //ImageView pcompanyname;
 //    LinearLayout visibilitylayout;
@@ -81,7 +80,7 @@ public class PharmaProductCompaign extends AppCompatActivity implements View.OnC
         _activity = this;
 
         title=(TextView)findViewById(R.id.back_tv);
-        title.setText("New Product Campaigns");
+        title.setText("Product Campaigns");
 
 //        visibilitylayout=(LinearLayout)findViewById(R.id.layout_notifications);
         seeAllNotifications=(LinearLayout)findViewById(R.id.l_seeallnotifi);
@@ -253,7 +252,7 @@ public class PharmaProductCompaign extends AppCompatActivity implements View.OnC
             System.out.println("Url: " + url);
 
             JSONParser parser = new JSONParser();
-            jsonArray = parser.getJSON_Response(url);
+            JSONArray jsonArray = parser.getJSON_Response(url);
 
             pharmaNotifications = new ArrayList<>();
 

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:text="John Deo"
-            android:textColor="@android:color/black"/>
+            android:textColor="@color/silver"/>
 
         <TextView
             android:id="@+id/specialistIn"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:text="ortho"
-            android:textColor="@android:color/black"
+            android:textColor="@color/pharma_list_item_text_grey"
             android:textSize="15dp"/>
     </LinearLayout>
 

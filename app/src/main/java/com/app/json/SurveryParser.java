@@ -59,9 +59,7 @@ public class SurveryParser {
                     survery.setCompanyId(jsonObject.getInt(JSONTag.COMPANY_ID));
                 }
                 if(jsonObject.has(JSONTag.THERAPEUTIC_ID)){
-                    //if(jsonObject.getInt(JSONTag.THERAPEUTIC_ID) == ) {
-                        //survery.setTherapeuticId(jsonObject.getInt(JSONTag.THERAPEUTIC_ID));
-                    //}
+                    survery.setTherapeuticId(jsonObject.getInt(JSONTag.THERAPEUTIC_ID));
                 }
                 if(jsonObject.has(JSONTag.COMP_NAME)){
                     survery.setCompanyName(jsonObject.getString(JSONTag.COMP_NAME));
