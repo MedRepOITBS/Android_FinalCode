@@ -168,7 +168,7 @@ public class TransformActivity extends AppCompatActivity implements View.OnClick
         dropdown.setVisibility(View.GONE);
         switch (objectId) {
             case R.id.connect:
-                intent = new Intent(this, NoContactActivity.class);
+                intent = new Intent(this, DoctorsMyContactActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
                 break;
