@@ -1,12 +1,7 @@
 package medrep.medrep;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -28,7 +23,6 @@ import com.app.fragments.DoctorNavigationDrawerFragment;
 import com.app.fragments.DoctorSurveyListLV;
 import com.app.fragments.NotificationDetails;
 import com.app.interfaces.GetResponse;
-import com.app.json.SignInParser;
 import com.app.pojo.AppointmentList;
 import com.app.pojo.RefreshToken;
 import com.app.pojo.SignIn;
@@ -37,9 +31,9 @@ import com.app.pojo.SurveryList;
 import com.app.reminder.AlarmReceiver;
 import com.app.task.AppointmentsAsyncTask;
 import com.app.task.DoctorGetMethods;
-import com.app.task.DoctorPostMethods;
+import com.app.task.HttpPost;
 import com.app.task.NotificationGetTask;
-import com.app.util.GlobalVariables;
+import com.app.task.NotificationPost;
 import com.app.util.HttpUrl;
 import com.app.util.OnSwipeTouchListener;
 import com.app.util.Utils;
@@ -49,7 +43,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -61,8 +54,11 @@ public class DoctorDashboard extends AppCompatActivity implements View.OnClickLi
     private AppointmentList appointmentsList;
     private ArrayList<TextView> notificationTextViewObjects = new ArrayList<>();
     private ArrayList<TextView> appointmentsTextViewObjects = new ArrayList<>();
+    private TextView notificationCount;
+    private NotificationPost notificationPost;
+    private String notificationUrl;
 
-   // private ScreenSlidePagerAdapter mPagerAdapter;
+    // private ScreenSlidePagerAdapter mPagerAdapter;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -89,7 +85,7 @@ public class DoctorDashboard extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-LinearLayout header_slider;
+    LinearLayout header_slider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,8 +104,13 @@ LinearLayout header_slider;
         NotificationGetTask asyncTask = new NotificationGetTask();
         asyncTask.delegate = this;
         //System.out.println(values);
+        Log.i("qqqqqqqqqqqqqqqqq", modifiedDate+"");
         String url = HttpUrl.MYNOTIFICATION+modifiedDate+"?access_token="+accessToken;
         asyncTask.execute(url);
+
+        notificationPost = new NotificationPost(DoctorDashboard.this);
+        notificationUrl = HttpUrl.COMMONURL+"/getPendingItems?token="+accessToken;
+        notificationPost.execute(notificationUrl, "getNotificationCount", "{}");
 
         AppointmentsAsyncTask appointmentAsyncTask = new AppointmentsAsyncTask(this);
         //System.out.println(values);
@@ -150,6 +151,7 @@ LinearLayout header_slider;
         doctor_username = (TextView) findViewById(R.id.doctor_username);
         doctor_username.setOnClickListener(this);
 
+        notificationCount = (TextView) findViewById(R.id.notificationCount);
 
         DoctorNavigationDrawerFragment drawerFragment = (DoctorNavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
@@ -198,7 +200,7 @@ LinearLayout header_slider;
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();*/
 
-               // displayFragment(notificationBrand);
+                // displayFragment(notificationBrand);
             }
         }
 
@@ -222,6 +224,26 @@ LinearLayout header_slider;
     }
 
     public void getResult(String response) {
+
+    }
+
+    public void getNotificationCount(String response){
+        Log.i("reSSSSSSSSSSSSSSSS", response+"");
+        try{
+            JSONObject jsonObject = new JSONObject(response);
+            String result = jsonObject.getString("result");
+            JSONObject object = new JSONObject(result);
+            String countStatus = object.getString("resetNotificationCount");
+            int count = Integer.parseInt(object.getString("notificationsCount"));
+            Log.i("TTTTTTTTTTTT", object.getString("notificationsCount")+"::"+countStatus);
+            if(countStatus.contains("null") && count > 0){
+                notificationCount.setText(String.valueOf(count));
+                notificationCount.setVisibility(View.VISIBLE);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -313,7 +335,7 @@ LinearLayout header_slider;
             case R.id.header_slider:
                 DocNotificatonBrand notificationBrand1 = new DocNotificatonBrand();
 
-               // displayFragment(notificationBrand1);
+                // displayFragment(notificationBrand1);
                 break;
             case  R.id.notifications:
                 DocNotificatonBrand notificationBrand = new DocNotificatonBrand();
@@ -323,6 +345,19 @@ LinearLayout header_slider;
                 fragmentTransaction.commit();
 
                 displayFragment(notificationBrand);
+
+                JSONObject post_dict = new JSONObject();
+                try{
+                    post_dict.put("resetDoctorPlusCount", "true");
+                    post_dict.put("resetNotificationCount", "true");
+                    post_dict.put("resetSurveyCount", "true");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                new NotificationPost(DoctorDashboard.this).execute(notificationUrl, "updateNotification", String.valueOf(post_dict));
+                notificationCount.setText(String.valueOf(0));
+                notificationCount.setVisibility(View.GONE);
+
                 break;
 //            case R.id.getAppointments_Button:
 //                if(Utils.isNetworkAvailable(DoctorDashboard.this)){
@@ -333,7 +368,7 @@ LinearLayout header_slider;
                /*if(appointmentsList == null){
                    Toast.makeText(DoctorDashboard.this, "Appointment are being retrieved, please try after some time.", Toast.LENGTH_SHORT).show();
                }*/
-                //break;
+            //break;
             case R.id.survey:
                 if(Utils.isNetworkAvailable(DoctorDashboard.this)) {
                     new DoctorGetMethods(DoctorDashboard.this).execute(HttpUrl.BASEURL + HttpUrl.GET_PENDING_SURVEYS, "", "survery");
@@ -345,7 +380,7 @@ LinearLayout header_slider;
                 startActivity(intent);
                 break;
             case R.id.marketing_campaigns:
-                //Utils.DISPLAY_GENERAL_DIALOG(DoctorDashboard.this, "Coming Soon", "This Feature is presently under development.");
+//                Utils.DISPLAY_GENERAL_DIALOG(DoctorDashboard.this, "Coming Soon", "This Feature is presently under development.");
                 Intent campaignIntent = new Intent(this, MarketingCampaignsActivity.class);
                 startActivity(campaignIntent);
                 break;
@@ -375,7 +410,10 @@ LinearLayout header_slider;
 
     public void getSurveyList(SurveryList surveyList){
 
+        Log.i("serrrrrrrrrrrrrrrr00", surveyList+"");
+
         ArrayList<Survery> surveysList = surveyList.getSurveryArrayList();
+
         if(surveysList != null && surveysList.size() > 0){
             DoctorSurveyListLV surveyListLV = new DoctorSurveyListLV();
             surveyListLV.setSurveyList(surveyList);
@@ -384,7 +422,7 @@ LinearLayout header_slider;
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
 
-            displayFragment(surveyListLV);
+            //displayFragment(surveyListLV);
         }else{
             Toast.makeText(DoctorDashboard.this, "No surveys available.", Toast.LENGTH_SHORT).show();
         }
@@ -467,7 +505,7 @@ LinearLayout header_slider;
         fragmentTransaction.addToBackStack(null);
         notificationBrand.setArguments(bundle);
         fragmentTransaction.commit();*/
-   // }
+    // }
 
     public void getAppointmentsList(){
         if(Utils.isNetworkAvailable(DoctorDashboard.this)) {
@@ -502,9 +540,14 @@ LinearLayout header_slider;
                     }
 
                 }
+//                if(object.length() != 0){
+//                    notificationCount.setText(String.valueOf(object.length()));
+//                    notificationCount.setVisibility(View.VISIBLE);
+//                }
+
             }
         } catch (JSONException e) {
-                e.printStackTrace();
+            e.printStackTrace();
         }
         for(int i = 0; i < notificationNames.size(); i++) {
             if(i < notificationTextViewObjects.size()) {
@@ -590,7 +633,7 @@ LinearLayout header_slider;
 //            });
 
 
-            //return rootView;
+    //return rootView;
 //            return null;
 //        }
 //

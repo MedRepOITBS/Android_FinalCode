@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="match_parent"
+    android:background="@color/light_blue"
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/home_button"
+        android:text="New Post"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_margin="15dp"
+        android:gravity="center_vertical"/>
+    
+    <ImageView
+        android:id="@+id/previewImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/stats2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/camera"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera"
+            android:background="@android:color/transparent"
+            android:gravity="center_horizontal"/>
+        <ImageButton
+            android:id="@+id/gallery"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gallery"
+            android:background="@android:color/transparent"
+            android:gravity="center_horizontal"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/postMessage"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:lines="4"
+        android:background="@drawable/white_backgound_with_borders"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="OK"
+            android:background="@color/d_gray"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+            android:enabled="false"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="CANCEL"
+            android:background="@color/home_button"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
