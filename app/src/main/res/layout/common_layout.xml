@@ -138,6 +138,7 @@
                 android:id="@+id/addButton"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_gravity="center"
                 android:background="@mipmap/add_icon"/>
         </LinearLayout>
     </LinearLayout>
