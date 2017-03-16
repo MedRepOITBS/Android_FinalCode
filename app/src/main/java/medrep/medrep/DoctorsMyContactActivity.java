@@ -55,7 +55,7 @@ public class DoctorsMyContactActivity extends AppCompatActivity implements View.
         setContentView(R.layout.activity_doctors_my_contact);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         TextView title = (TextView)findViewById(R.id.title);
-        title.setText("Contacts");
+        title.setText("Connect");
         Button connect = (Button)findViewById(R.id.connect);
         connect.setBackground(getResources().getDrawable(R.drawable.border_button_light));
         LinearLayout listLayout = (LinearLayout)findViewById(R.id.listLayout);
@@ -136,9 +136,10 @@ public class DoctorsMyContactActivity extends AppCompatActivity implements View.
     @TargetApi(Build.VERSION_CODES.KITKAT)
     private void initialieHorizontalView() {
         //final ListView listViewObject = listView;
-        final String names[] = {"My Contacts", "Suggested Contacs", "My Groups", "Suggested Groups"};
+        final String names[] = {"My Connections", "Suggested Connections", "My Groups", "Suggested Groups"};
         buttonIds = new int[]{R.id.button1, R.id.button2, R.id.button3, R.id.button4};
         LinearLayout horizontalLayout = (LinearLayout)findViewById(R.id.horizontalLayout);
+        horizontalLayout.setPadding(10, 0, 0, 10);
         for(int i = 0; i < names.length; i++) {
             LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT);
             Button tv=new Button(this);
@@ -161,6 +162,7 @@ public class DoctorsMyContactActivity extends AppCompatActivity implements View.
     }
 
     private void initializeGridView(final JSONArray result) {
+        System.out.println("JSONArray result " + result);
         GridView contactsGridView = (GridView)findViewById(R.id.contactsGridView);
 
         CommonAdapter customAdapter = new CommonAdapter(this, result);
@@ -237,9 +239,9 @@ public class DoctorsMyContactActivity extends AppCompatActivity implements View.
 
                 break;
             case R.id.button2:
-                    clickButton(R.id.button2);
-                    navigateActivities(SuggestedContactsActivity.class, "");
-                    overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
+                clickButton(R.id.button2);
+                navigateActivities(SuggestedContactsActivity.class, "");
+                overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
                 break;
             case R.id.button3:
                 clickButton(R.id.button3);
@@ -289,7 +291,7 @@ public class DoctorsMyContactActivity extends AppCompatActivity implements View.
 
     private void navigateActivities(Class object, String name) {
         Intent intent = new Intent(this, object);
-       if(object == DoctorDashboard.class) {
+        if(object == DoctorDashboard.class) {
             intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
         }
         if(!name.equals("")) {
@@ -312,10 +314,15 @@ public class DoctorsMyContactActivity extends AppCompatActivity implements View.
                 Object json = new JSONTokener(result).nextValue();
                 if(json instanceof JSONObject) {
                     JSONObject obj = new JSONObject(result);
-                    if(obj.has("message")){
-                        if(obj.getString("Status").equals("Error")) {
+                    if(obj.has("status")){
+                        if(obj.getString("status").equals("error")) {
                             RefreshAccessToken token = new RefreshAccessToken(this);
                             startActivity(getIntent());
+                        } else if(obj.getString("status").equals("success")){
+                            JSONObject object = obj.getJSONObject("result");
+                            JSONArray array = object.getJSONArray("myContacts");
+                            resultArray = array;
+                            initializeGridView(array);
                         } else {
                             Toast.makeText(this, "Group Deleted Successfully", Toast.LENGTH_LONG).show();
                             startActivity(getIntent());

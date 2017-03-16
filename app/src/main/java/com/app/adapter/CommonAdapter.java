@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.Html;
+import android.text.format.DateFormat;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,7 +54,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.logging.LogRecord;
 
@@ -64,6 +67,7 @@ import medrep.medrep.AllContactsActivity;
 import medrep.medrep.ContactsMoreOptionsActivity;
 import medrep.medrep.DoctorMyGroupsActivty;
 import medrep.medrep.DoctorParticularGroupActivity;
+import medrep.medrep.DoctorPostsActivity;
 import medrep.medrep.DoctorsMyContactActivity;
 import medrep.medrep.GroupMoreActivity;
 import medrep.medrep.LoginActivity;
@@ -654,123 +658,176 @@ public class CommonAdapter extends BaseAdapter {
                 JSONObject object = result.getJSONObject(position);
                 String doctorTitle = object.getString("doctor_Name");
                 //if(!doctorTitle.equals("null")) {
-                    convertView = mInflater.inflate(R.layout.custom_doctor_contact_list_view, null);
-                    TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
-                    doctorName.setText(doctorTitle);
-                    Button doctorImage = (Button)convertView.findViewById(R.id.doctorImage);
-                    String doctorPic = object.getString("displayPicture");
-                    if(doctorPic == null) {
-                        doctorImage.setText(doctorTitle.charAt(0));
-                    } else {
-                        LoadImage loadImage = new LoadImage(doctorImage);
-                        loadImage.execute(doctorPic);
-                    }
-                    TextView doctorStatus = (TextView)convertView.findViewById(R.id.doctorStatus);
-                    String message = object.getString("short_desc");
-                    if(!message.equals("null")) {
-                        doctorStatus.setText(message);
-                    } else {
-                        doctorStatus.setText("");
-                    }
+                convertView = mInflater.inflate(R.layout.custom_doctor_contact_list_view, null);
+                TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
+                doctorName.setText(doctorTitle);
+                Button doctorImage = (Button)convertView.findViewById(R.id.doctorImage);
+                String doctorPic = object.getString("displayPicture");
+                if(doctorPic == null) {
+                    doctorImage.setText(doctorTitle.charAt(0));
+                } else {
+                    LoadImage loadImage = new LoadImage(doctorImage);
+                    loadImage.execute(doctorPic);
+                }
+                TextView doctorStatus = (TextView)convertView.findViewById(R.id.doctorStatus);
+                String message = object.getString("short_desc");
+                if(!message.equals("null")) {
+                    doctorStatus.setText(message);
+                } else {
+                    doctorStatus.setText("");
+                }
 
-                    ImageView doctorImageShare = (ImageView)convertView.findViewById(R.id.doctorImageShare);
-                    doctorImageShare.setVisibility(View.GONE);
+                ImageView doctorImageShare = (ImageView)convertView.findViewById(R.id.doctorImageShare);
+                doctorImageShare.setVisibility(View.GONE);
 
-                    LinearLayout likeLayout = (LinearLayout)convertView.findViewById(R.id.likeLayout);
-                    final TextView numLikes = (TextView)convertView.findViewById(R.id.numLikes);
-                    String likes = object.getString("likes_count");
-                    numLikes.setText(likes);
-                    TextView commentCount = (TextView)convertView.findViewById(R.id.commentCount);
-                    String comment = object.getString("comment_count");
-                    commentCount.setText(comment);
-                    TextView shareCount = (TextView)convertView.findViewById(R.id.shareCount);
-                    String share = object.getString("share_count");
-                    shareCount.setText(share);
+                LinearLayout likeLayout = (LinearLayout)convertView.findViewById(R.id.likeLayout);
+                final TextView numLikes = (TextView)convertView.findViewById(R.id.numLikes);
+                String likes = object.getString("likes_count");
+                numLikes.setText(likes);
+                TextView commentCount = (TextView)convertView.findViewById(R.id.commentCount);
+                String comment = object.getString("comment_count");
+                commentCount.setText(comment);
+                TextView shareCount = (TextView)convertView.findViewById(R.id.shareCount);
+                String share = object.getString("share_count");
+                shareCount.setText(share);
+                long postedOn = object.getLong("posted_on");
+                String dateTime = getDate(postedOn);
+                TextView sharedMessageDate = (TextView)convertView.findViewById(R.id.shared_message_date);
+                sharedMessageDate.setText(dateTime);
                 final int finalPosition = position;
                 likeLayout.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            String ip = HttpUrl.COMMONURL;
-                            String accessToken = SignIn.GET_ACCESS_TOKEN();
-                            String url = ip + "/postLike?token=" + accessToken;
-                            JSONObject obj = new JSONObject();
-                            try {
-                                JSONObject resultObj = result.getJSONObject(finalPosition);
-                                obj.put("like_status", "true");
-                                obj.put("message_id", resultObj.getString("id"));
-                                Log.i("TESTING", numLikes+"");
-                                String likesCount = numLikes.getText().toString();
-                                int likes = Integer.parseInt(likesCount);
-                                likes += 1;
-                                numLikes.setText(likes+"");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            HttpPost post = new HttpPost(obj);
-                            post.delegate = (ShareActivity)context;
-                            post.execute(url);
+                    @Override
+                    public void onClick(View v) {
+                        String ip = HttpUrl.COMMONURL;
+                        String accessToken = SignIn.GET_ACCESS_TOKEN();
+                        String url = ip + "/postLike?token=" + accessToken;
+                        JSONObject obj = new JSONObject();
+                        try {
+                            JSONObject resultObj = result.getJSONObject(finalPosition);
+                            obj.put("like_status", "true");
+                            obj.put("message_id", resultObj.getString("id"));
+                            Log.i("TESTING", numLikes+"");
+                            String likesCount = numLikes.getText().toString();
+                            int likes = Integer.parseInt(likesCount);
+                            likes += 1;
+                            numLikes.setText(likes+"");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    });
-                    LinearLayout messagelayout = (LinearLayout)convertView.findViewById(R.id.messagelayout);
-                    //TextView commentCount = (TextView)convertView.findViewById(R.id.commentCount);
-                    messagelayout.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            AlertDialog.Builder dialog = new AlertDialog.Builder((ShareActivity)context);
-                            LayoutInflater inflater = ((ShareActivity) context).getLayoutInflater();
-                            View dialogView = inflater.inflate(R.layout.custom_share_layout, null);
-                            dialog.setView(dialogView);
-                            final Button uploadImage = (Button)dialogView.findViewById(R.id.uploadImage);
-                            ImageView previewImage = (ImageView)dialogView.findViewById(R.id.previewImage);
-                            ((ShareActivity)context).previewImage = previewImage;
-                            uploadImage.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    final CharSequence[] items = {"Take Photo", "Choose from Library", "Cancel"};
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                                    builder.setTitle("Add Photo!");
-                                    builder.setItems(items, new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int item) {
-                                            if (items[item].equals("Take Photo")) {
-                                                Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                                                ((ShareActivity)context).startActivityForResult(takePicture, 0);
-                                            } else if (items[item].equals("Choose from Library")) {
-                                                Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                                                ((ShareActivity)context).startActivityForResult(pickPhoto , 1);
-                                            } else if (items[item].equals("Cancel")) {
-                                                dialog.dismiss();
-                                            }
+                        HttpPost post = new HttpPost(obj);
+                        post.delegate = (ShareActivity)context;
+                        post.execute(url);
+                    }
+                });
+                LinearLayout messagelayout = (LinearLayout)convertView.findViewById(R.id.messagelayout);
+                //TextView commentCount = (TextView)convertView.findViewById(R.id.commentCount);
+                messagelayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder dialog = new AlertDialog.Builder((ShareActivity)context);
+                        LayoutInflater inflater = ((ShareActivity) context).getLayoutInflater();
+                        View dialogView = inflater.inflate(R.layout.custom_share_layout, null);
+                        dialog.setView(dialogView);
+                        final Button uploadImage = (Button)dialogView.findViewById(R.id.uploadImage);
+                        ImageView previewImage = (ImageView)dialogView.findViewById(R.id.previewImage);
+                        ((ShareActivity)context).previewImage = previewImage;
+                        uploadImage.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                final CharSequence[] items = {"Take Photo", "Choose from Library", "Cancel"};
+                                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                                builder.setTitle("Add Photo!");
+                                builder.setItems(items, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int item) {
+                                        if (items[item].equals("Take Photo")) {
+                                            Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                                            ((ShareActivity)context).startActivityForResult(takePicture, 0);
+                                        } else if (items[item].equals("Choose from Library")) {
+                                            Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                            ((ShareActivity)context).startActivityForResult(pickPhoto , 1);
+                                        } else if (items[item].equals("Cancel")) {
+                                            dialog.dismiss();
                                         }
-                                    });
-                                    builder.show();
-                                }
-                            });
-                            final AlertDialog dialogShow = dialog.create();
-                            dialogShow.show();
-                            Button okButton = (Button)dialogView.findViewById(R.id.okButton);
-                            okButton.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    dialogShow.dismiss();
-                                }
-                            });
-                        }
-                    });
+                                    }
+                                });
+                                builder.show();
+                            }
+                        });
+                        final AlertDialog dialogShow = dialog.create();
+                        dialogShow.show();
+                        Button okButton = (Button)dialogView.findViewById(R.id.okButton);
+                        okButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialogShow.dismiss();
+                            }
+                        });
+                    }
+                });
 
-                    LinearLayout shareLayout = (LinearLayout)convertView.findViewById(R.id.shareLayout);
-                    shareLayout.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent((ShareActivity)context, AllContactsActivity.class);
-                            ((ShareActivity)context).startActivity(intent);
-                        }
-                    });
+                LinearLayout shareLayout = (LinearLayout)convertView.findViewById(R.id.shareLayout);
+                shareLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent((ShareActivity)context, AllContactsActivity.class);
+                        ((ShareActivity)context).startActivity(intent);
+                    }
+                });
 //                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        } else if( context instanceof ProfileViewActivity) {
+        } else if(context instanceof DoctorPostsActivity) {
+
+            try {
+                JSONObject object = result.getJSONObject(position);
+                String doctorTitle = object.getString("doctor_Name");
+                //if(!doctorTitle.equals("null")) {
+                convertView = mInflater.inflate(R.layout.custom_doctor_contact_list_view, null);
+                TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
+                doctorName.setText(doctorTitle);
+                Button doctorImage = (Button)convertView.findViewById(R.id.doctorImage);
+                String doctorPic = object.getString("displayPicture");
+                if(doctorPic == null) {
+                    doctorImage.setText(doctorTitle.charAt(0));
+                } else {
+                    LoadImage loadImage = new LoadImage(doctorImage);
+                    loadImage.execute(doctorPic);
+                }
+                TextView doctorStatus = (TextView)convertView.findViewById(R.id.doctorStatus);
+                String message = object.getString("short_desc");
+                if(!message.equals("null")) {
+                    doctorStatus.setText(message);
+                } else {
+                    doctorStatus.setText("");
+                }
+
+                ImageView doctorImageShare = (ImageView) convertView.findViewById(R.id.doctorImageShare);
+                //doctorImageShare.setVisibility(View.GONE);
+                String url = object.getString("url");
+//                System.out.println("Iamge url" + url.getClass().getName());
+                if(url.length() > 10) {
+                    doctorImageShare.setVisibility(View.VISIBLE);
+                    LoadImage loadImage = new LoadImage(doctorImageShare);
+                    loadImage.execute(url);
+                } else {
+                    doctorImageShare.setVisibility(View.GONE);
+                }
+
+                LinearLayout statistics = (LinearLayout)convertView.findViewById(R.id.statistics);
+                statistics.setVisibility(View.GONE);
+                long postedOn = object.getLong("posted_on");
+                String dateTime = getDate(postedOn);
+                TextView sharedMessageDate = (TextView)convertView.findViewById(R.id.shared_message_date);
+                sharedMessageDate.setVisibility(View.VISIBLE);
+                sharedMessageDate.setText(dateTime);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        else if( context instanceof ProfileViewActivity) {
             convertView = mInflater.inflate(R.layout.custom_profile_list_view, null);
             TextView specialist = (TextView)convertView.findViewById(R.id.specialist);
             ImageView addData = (ImageView)convertView.findViewById(R.id.addData);
@@ -1188,9 +1245,9 @@ public class CommonAdapter extends BaseAdapter {
 //    }
 
     private class LoadImage extends AsyncTask<String, String, Bitmap> {
-        private Button buttonImage;
+        private View buttonImage;
 
-        private LoadImage(Button buttonImage) {
+        private LoadImage(View buttonImage) {
             this.buttonImage = buttonImage;
         }
 
@@ -1227,6 +1284,15 @@ public class CommonAdapter extends BaseAdapter {
                 buttonImage.setBackground(bdrawable);
             }
         }
+
+
+    }
+
+    private String getDate(long time) {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(time);
+        String date = DateFormat.format("dd-MM-yyyy HH:mm:ss", cal).toString();
+        return date;
     }
 
 //    private void setImage(ImageView view, Bitmap image) {
