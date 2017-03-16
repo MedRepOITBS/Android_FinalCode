@@ -62,8 +62,7 @@ public class DoctorPostMethods {
         System.out.println("\nSending 'GET' request to URL : " + url+"response code: "+responseCode);
         System.out.println("Response Code : " + responseCode);
 
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
         StringBuffer response = new StringBuffer();
 

@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
@@ -26,14 +27,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.adapter.CommonAdapter;
 import com.app.adapter.DoctorGroupListViewAdapter;
 import com.app.interfaces.GetResponse;
 import com.app.pojo.SignIn;
 import com.app.task.HttpPost;
+import com.app.task.NotificationGetTask;
 import com.app.util.HttpUrl;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,14 +49,16 @@ public class DoctorPostsActivity extends AppCompatActivity implements View.OnCli
 
     private int contactId;
     private int doctorId;
+    private ListView postList;
+    private TextView postAvailable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_contact);
         ImageButton add = (ImageButton)findViewById(R.id.add);
-        add.setVisibility(View.GONE);
+        //add.setVisibility(View.GONE);
         ImageButton message = (ImageButton)findViewById(R.id.message);
-        message.setVisibility(View.GONE);
+       // message.setVisibility(View.GONE);
 //        ListView doctorPostListView = (ListView)findViewById(R.id.doctorPostListView);
 //        DoctorGroupListViewAdapter adapter = new DoctorGroupListViewAdapter(this, "doctorPostActivity");
 //        doctorPostListView.setAdapter(adapter);
@@ -67,10 +74,9 @@ public class DoctorPostsActivity extends AppCompatActivity implements View.OnCli
         searchLayout.setVisibility(View.GONE);
         HorizontalScrollView horizontalScroll = (HorizontalScrollView)findViewById(R.id.horizontalScroll);
         horizontalScroll.setVisibility(View.GONE);
-        LinearLayout postLayout = (LinearLayout)findViewById(R.id.postLayout);
-        postLayout.setVisibility(View.GONE);
-        LinearLayout extraLayout = (LinearLayout)findViewById(R.id.extraLayout);
-        extraLayout.setVisibility(View.VISIBLE);
+//        LinearLayout postLayout = (LinearLayout)findViewById(R.id.postLayout);
+//        postLayout.setVisibility(View.GONE);
+//        specialistaLayout.setVisibility(View.VISIBLE);
         Button onBackClick = (Button)findViewById(R.id.onBackClick);
         onBackClick.setOnClickListener(this);
         TextView title = (TextView)findViewById(R.id.title);
@@ -85,8 +91,21 @@ public class DoctorPostsActivity extends AppCompatActivity implements View.OnCli
         //doctorImage.setImageBitmap(image);
 
         Button addContct = (Button)findViewById(R.id.addContct);
-        addContct.setVisibility(View.VISIBLE);
+        addContct.setVisibility(View.GONE);
         addContct.setOnClickListener(this);
+
+//        Button addConnection = (Button)findViewById(R.id.add_connection);
+//        addConnection.setVisibility(View.VISIBLE);
+//        addConnection.setOnClickListener(this);
+//
+//        Button comment = (Button)findViewById(R.id.comment);
+//        comment.setVisibility(View.VISIBLE);
+//        comment.setOnClickListener(this);
+
+        postList = (ListView)findViewById(R.id.postList);
+        postList.setVisibility(View.VISIBLE);
+
+        postAvailable = (TextView)findViewById(R.id.postAvailable);
 
         Button deleteButton = (Button)findViewById(R.id.deleteButton);
         deleteButton.setOnClickListener(this);
@@ -94,6 +113,12 @@ public class DoctorPostsActivity extends AppCompatActivity implements View.OnCli
 //        message.setOnClickListener(this);
 //        addIcon = (ImageButton)findViewById(R.id.addIcon);
 //        addIcon.setOnClickListener(this);
+
+        NotificationGetTask notificationGetTask = new NotificationGetTask();
+        notificationGetTask.delegate = this;
+        String accessToken = SignIn.GET_ACCESS_TOKEN();
+        String url = HttpUrl.COMMONURL + "/getMessageById?token=" + accessToken + "&memberId=" + doctorId + "&groupId=0";
+        notificationGetTask.execute(url);
     }
 
     @Override
@@ -242,12 +267,31 @@ public class DoctorPostsActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void response(String result) {
+        System.out.println(result);
         if(result != null) {
-            finish();
+            try {
+                Object json = new JSONTokener(result).nextValue();
+                if(json instanceof JSONArray) {
+                    JSONArray array = new JSONArray(result);
+                    if(array.length() > 0) {
+                        initializeArray(array);
+                    }
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            //finish();
         } else {
             Toast.makeText(this, "Something went wrong, please try after sometime.", Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    private void initializeArray(JSONArray resultArray) {
+        postAvailable.setVisibility(View.GONE);
+        CommonAdapter adapter = new CommonAdapter(this, resultArray);
+        postList.setAdapter(adapter);
     }
 
     private class LoadImage extends AsyncTask<String, String, Bitmap> {

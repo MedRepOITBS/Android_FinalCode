@@ -3,11 +3,6 @@ package com.app.adapter;
 /**
  * Created by masood on 9/5/15.
  */
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,25 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.pojo.DataObject;
-import com.app.util.HttpUrl;
 import com.app.util.UserRoles;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 
-import medrep.medrep.DoctorDashboard;
-import medrep.medrep.LoginActivity;
 import medrep.medrep.R;
-import medrep.medrep.SplashScreen;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class MyRecyclerViewAdapter extends RecyclerView
         .Adapter<MyRecyclerViewAdapter
         .DataObjectHolder> {
-    private static String profilePicture = "";
-    private Bitmap dPictureBitmap = null;
     private static String LOG_TAG = "MyRecyclerViewAdapter";
     private ArrayList<DataObject> mDataset;
     private static MyClickListener myClickListener;
@@ -117,18 +102,10 @@ public class MyRecyclerViewAdapter extends RecyclerView
     @Override
     public void onBindViewHolder(DataObjectHolder holder, int position) {
         holder.label.setText(mDataset.get(position).getmText1());
-        if (roleID != -1 && roleID == UserRoles.DOCTOR) {
-            if (position == 0){
-                holder.imageView.setImageBitmap(LoginActivity.dPictureBitmap);
-            }else {
-                holder.imageView.setImageResource(docNavDrawables[position]);
-            }
-        } else {
-            if (position == 0){
-                holder.imageView.setImageBitmap(LoginActivity.dPictureBitmap);
-            }else {
-                holder.imageView.setImageResource(pharmaNavDrawables[position]);
-            }
+        if(roleID != -1 && roleID == UserRoles.DOCTOR){
+            holder.imageView.setImageResource(docNavDrawables[position]);
+        }else{
+            holder.imageView.setImageResource(pharmaNavDrawables[position]);
         }
 
 //        holder.dateTime.setText(mDataset.get(position).getmText2());

@@ -19,7 +19,7 @@
                 android:id="@+id/onBackClick"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/back_icon"/>
+                android:background="@drawable/back_button"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
@@ -53,7 +53,9 @@
         android:layout_width="match_parent"
         android:layout_height="28dp"
         android:background="@color/home_button"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp">
         <LinearLayout
             android:id="@+id/horizontalLayout"
             android:layout_width="match_parent"
@@ -83,11 +85,11 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.8"
+            android:layout_weight="0.5"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp">
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
             <AutoCompleteTextView
                 android:id="@+id/searchConnections"
                 android:layout_width="match_parent"
@@ -95,6 +97,7 @@
                 android:background="@drawable/grey_background"
                 android:hint="Search"
                 android:cursorVisible="false"
+                android:singleLine="true"
                 android:gravity="center"
                 android:textColorHint="@color/silver"/>
         </LinearLayout>
@@ -102,7 +105,7 @@
             android:id="@+id/searchImageLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
+            android:layout_weight="0.5"
             android:gravity="center"
             android:visibility="gone">
             <ImageButton
@@ -113,16 +116,23 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/dropdown"
-            android:layout_width="wrap_content"
+            android:clickable="false"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.5"
             android:padding="10dp"
             android:orientation="horizontal"
             android:visibility="gone">
-            <Spinner
+            <Button
                 android:id="@+id/categorySpinner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/home_button"/>
+                android:background="@color/home_button"
+                android:text="All"
+                android:textAllCaps="false"
+                android:singleLine="true"
+                android:drawableRight="@drawable/dropdown"
+                android:textColor="@color/tect_color_white"/>
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -132,8 +142,9 @@
             android:id="@+id/addLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:gravity="center">
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:visibility="gone">
             <ImageButton
                 android:id="@+id/addButton"
                 android:layout_width="30dp"

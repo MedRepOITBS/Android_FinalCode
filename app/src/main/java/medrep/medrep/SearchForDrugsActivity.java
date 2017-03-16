@@ -1,10 +1,7 @@
 package medrep.medrep;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.Dialog;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -24,7 +21,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -40,34 +36,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
-import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import pharma.ValidateOtpActivity;
-
 public class SearchForDrugsActivity extends AppCompatActivity implements View.OnClickListener, GetResponse{
 
-    private ArrayList<String> names;
+    final private ArrayList<String> names = new ArrayList<>();
     private TextView drugName;
     private AutoCompleteTextView searchConnections;
     private TextView drugDescription;
     private TextView drugQuantity;
     private Button certified;
     private Boolean checkValue = true;
-    private LinearLayout linearLayoutParent;
-    ProgressDialog dialog;
-    private AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-            setContentView(R.layout.activity_search_for_drugs);
-
-        linearLayoutParent = (LinearLayout) findViewById(R.id.parent_container);
+        setContentView(R.layout.activity_search_for_drugs);
         HorizontalScrollView horizontalScroll = (HorizontalScrollView)findViewById(R.id.horizontalScroll);
         horizontalScroll.setVisibility(View.GONE);
         LinearLayout searchLayout = (LinearLayout)findViewById(R.id.searchLayout);
@@ -100,14 +86,11 @@ public class SearchForDrugsActivity extends AppCompatActivity implements View.On
             @Override
             public void afterTextChanged(Editable s) {
                 String searchText = searchConnections.getText().toString();
-                if (alertDialog !=null && alertDialog.isShowing()){
-                    alertDialog.dismiss();
-                }
-                if(checkValue && searchText.length() >= 4) {
+                if(checkValue && searchText.length() == 4) {
                     String searchedText = searchConnections.getText().toString();
                     System.out.println(searchedText);
                     String path = searchedText.replaceAll(" ", "%20");
-                    String url = "http://122.175.50.252:8080/medrep-web/drugSearch?callback=callback&id=" + path + "&limit=10";
+                    String url = "http://oaayush-aayush.rhcloud.com/api/medicine_suggestions/?id=" + path + "&key=77b06e379a6f984a1f1ec091ce70f4" + "&limit=10";
                     NotificationGetTask task = new NotificationGetTask();
                     task.delegate = SearchForDrugsActivity.this;
                     task.execute(url);
@@ -129,7 +112,6 @@ public class SearchForDrugsActivity extends AppCompatActivity implements View.On
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 try {
-                    hideSoftKeyboard(SearchForDrugsActivity.this);
                     JSONObject object = result.getJSONObject(position);
                     String brand = object.getString("brand");
                     String manufacturer = object.getString("manufacturer");
@@ -172,13 +154,6 @@ public class SearchForDrugsActivity extends AppCompatActivity implements View.On
     public void response(String result) {
         if(result != null) {
             try {
-                dialog = new ProgressDialog(SearchForDrugsActivity.this);
-                dialog.setMessage("Loading...");
-                dialog.setIndeterminate(true);
-                dialog.setCanceledOnTouchOutside(false);
-                dialog.show();
-                if (result.startsWith("{")){
-
                 JSONObject object = new JSONObject(result);
                 JSONObject response = object.getJSONObject("response");
                 if(response.has("medicine")) {
@@ -219,38 +194,14 @@ public class SearchForDrugsActivity extends AppCompatActivity implements View.On
 //                        adapter.add(suggestion);
 //                        adapter.getFilter().filter(searchConnections.getText(), null);
                         }
-                    }
-                } else if(response.has("medicine_alternatives")) {
-                    JSONArray array = response.getJSONArray("medicine_alternatives");
-                    initializeListView(array);
-                }
 
-
-                }else {
-                    JSONArray jsonArray = new JSONArray(result);
-                    System.out.println(result);
-                    names = new ArrayList<>();
-
-                    if (jsonArray.length() > 0) {
-
-                        for (int i = 0; i < jsonArray.length(); i++) {
-//                        JSONObject particularMedicine = jsonArray.getJSONObject(i);
-//                        String suggestion = particularMedicine.get("");
-                            names.add(jsonArray.get(i).toString());
-//                        adapter.add(suggestion);
-//                        adapter.getFilter().filter(searchConnections.getText(), null);
-                        }
-                        LinearLayout detailsLayout = (LinearLayout)findViewById(R.id.detailsLayout);
-                        detailsLayout.setVisibility(View.GONE);
-                        LinearLayout relatedLayout = (LinearLayout)findViewById(R.id.relatedLayout);
-                        relatedLayout.setVisibility(View.GONE);
-                        alertDialog = new AlertDialog.Builder(this).create();
+                        final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
                         LayoutInflater inflater = getLayoutInflater();
                         View convertView = (View) inflater.inflate(R.layout.custom_alert_dialog, null);
                         alertDialog.setView(convertView);
                         alertDialog.setTitle("Select Drug");
                         ListView lv = (ListView) convertView.findViewById(R.id.lv);
-                        hideSoftKeyboard(SearchForDrugsActivity.this);
+
                         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,names);
                         lv.setAdapter(adapter);
                         alertDialog.show();
@@ -267,73 +218,22 @@ public class SearchForDrugsActivity extends AppCompatActivity implements View.On
                                 if (!searchConnectionsText.equals("")) {
                                     String text = searchConnections.getText().toString();
                                     String path = text.replaceAll(" ", "%20");
-                                    String url = "http://122.175.50.252:8080/medrep-web/medicineDetails?id="+ path +"&limit=10";
+                                    String url = "http://oaayush-aayush.rhcloud.com/api/medicine_details/?" + "id=" + path + "&key=77b06e379a6f984a1f1ec091ce70f4";
                                     NotificationGetTask task = new NotificationGetTask();
                                     task.delegate = SearchForDrugsActivity.this;
                                     task.execute(url);
                                 }
                             }
                         });
-                    } else{
-                        myDalog("No Drugs Found!!");
                     }
 
+                } else if(response.has("medicine_alternatives")) {
+                    JSONArray array = response.getJSONArray("medicine_alternatives");
+                    initializeListView(array);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            finally {
-                if (dialog != null && dialog.isShowing()){
-                    dialog.dismiss();
-                }
-            }
         }
-    }
-    /**
-     * Method hiding the android soft keypad
-     */
-    public static void hideSoftKeyboard(Activity activity) {
-        InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
-    }
-    /**
-     * Method creating a dialog-box, if there is no drugs found
-     */
-    public void myDalog(String msg) {
-        final Dialog dialog = new Dialog(SearchForDrugsActivity.this);
-
-        dialog.setContentView(R.layout.dialog);
-        // Set dialog title
-        dialog.setTitle("Medrep Message");
-
-        Button next_btn;
-        Button prev_btn;
-
-        next_btn = (Button)dialog.findViewById(R.id.nextButton);
-        prev_btn = (Button) dialog.findViewById(R.id.backButton);
-        prev_btn.setVisibility(View.INVISIBLE);
-        next_btn.setText("OK");
-
-        // set values for custom dialog components - text, image and button
-        final TextView text = (TextView) dialog.findViewById(R.id.textDialog);
-        text.setText(msg);
-        ImageView image = (ImageView) dialog.findViewById(R.id.imageDialog);
-        dialog.show();
-        next_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                searchConnections.setText("");
-
-            }
-        });
-        next_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Close dialog
-                dialog.dismiss();
-
-            }
-        });
     }
 }

@@ -126,17 +126,23 @@ public class NoContactActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void response(String result) {
+        System.out.println("result: " + result);
         if(result != null) {
             try {
                 Object json = new JSONTokener(result).nextValue();
                 if(json instanceof JSONObject) {
                     JSONObject obj = new JSONObject(result);
-                    if(obj.getString("status").equals("error")) {
-                        RefreshAccessToken token = new RefreshAccessToken(this);
-                        startActivity(getIntent());
+                    if(obj.getString("status").equals("success")) {
+                        Intent intent = new Intent(this, DoctorsMyContactActivity.class);
+                        intent.putExtra("name", "myContacts");
+                        //intent.putExtra("result", result);
+                        startActivity(intent);
+                        //RefreshAccessToken token = new RefreshAccessToken(this);
+                        //startActivity(getIntent());
                     } else {
-                        Toast.makeText(this, "Group Deleted Successfully", Toast.LENGTH_LONG).show();
-                        startActivity(getIntent());
+                        Toast.makeText(this, "Something went wrong, please try after sometime.", Toast.LENGTH_LONG).show();
+                        //startActivity(getIntent());
+                        finish();
                     }
                 } else {
                     JSONArray array = new JSONArray(result);

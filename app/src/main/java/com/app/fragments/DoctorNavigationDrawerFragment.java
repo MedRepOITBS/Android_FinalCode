@@ -82,8 +82,7 @@ public class DoctorNavigationDrawerFragment extends Fragment {
         mAdapter = new MyRecyclerViewAdapter(getDataSet(), roleID);
 
         mRecyclerView.setAdapter(mAdapter);
-        RecyclerView.ItemDecoration itemDecoration =
-                new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL);
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL);
         mRecyclerView.addItemDecoration(itemDecoration);
 
     }

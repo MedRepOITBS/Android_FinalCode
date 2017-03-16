@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal">
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF">
         <Button
             android:id="@+id/connect"
             android:layout_width="0dp"
@@ -14,9 +16,17 @@
             android:background="@drawable/border_button"
             android:text="@string/connect"
             android:textColor="@color/tect_color_white"
+            android:drawableTop="@drawable/conferencecall"
             android:textSize="@dimen/notification_header_text_size"
             android:textAllCaps="false"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" />
+
         <Button
             android:id="@+id/transform"
             android:layout_width="0dp"
@@ -25,10 +35,17 @@
             android:background="@drawable/border_button"
             android:text="@string/transform"
             android:textColor="@color/tect_color_white"
+            android:drawableTop="@drawable/knowledgesharingfilled"
             android:textSize="@dimen/notification_header_text_size"
             android:textAllCaps="false"
             android:paddingLeft="2dp"
             android:singleLine="true"/>
+
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" />
+
         <Button
             android:id="@+id/share"
             android:layout_width="0dp"
@@ -39,7 +56,14 @@
             android:paddingLeft="2dp"
             android:textColor="@color/tect_color_white"
             android:textAllCaps="false"
+            android:drawableTop="@drawable/clonefilled"
             android:textSize="@dimen/notification_header_text_size"/>
+
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF" />
+
         <Button
             android:id="@+id/serve"
             android:layout_width="0dp"
@@ -50,6 +74,7 @@
             android:paddingLeft="2dp"
             android:textColor="@color/tect_color_white"
             android:textAllCaps="false"
+            android:drawableTop="@drawable/wheelchairfilled"
             android:textSize="@dimen/notification_header_text_size"/>
     </LinearLayout>
 

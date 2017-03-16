@@ -3,17 +3,27 @@
     android:id="@+id/parentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <include layout="@layout/common_layout"/>
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="2">-->
+            <include layout="@layout/common_layout"/>
+        <!--</LinearLayout>-->
+
         <LinearLayout
             android:id="@+id/listLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.9"
-            android:background="@mipmap/noti_bg">
+            android:layout_weight="0.5"
+            >
             <ListView
                 android:id="@+id/newsListView"
                 android:layout_width="match_parent"

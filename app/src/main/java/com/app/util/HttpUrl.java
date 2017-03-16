@@ -89,7 +89,5 @@ public static final String PHARMA_GET_NOTIFICATION_ACTIVITY_SCORE = BASEURL + "/
     public static final String GET_MY_GROUPS = COMMONURL + "/getGroups?token=";
     public static final String CREATE_GROUP = COMMONURL + "/createGroup?token=";
 
-    public static String displayPic = "";
-
     //http://183.82.106.234:8080/MedRepApplication/api/pharmarep/updateAppointment?access_token=20e20067-2f67-4d22-b405-f8039cc9f1b6
 }

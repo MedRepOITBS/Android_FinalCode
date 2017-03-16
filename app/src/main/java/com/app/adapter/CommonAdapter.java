@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.Html;
+import android.text.format.DateFormat;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,7 +54,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.logging.LogRecord;
 
@@ -64,6 +67,7 @@ import medrep.medrep.AllContactsActivity;
 import medrep.medrep.ContactsMoreOptionsActivity;
 import medrep.medrep.DoctorMyGroupsActivty;
 import medrep.medrep.DoctorParticularGroupActivity;
+import medrep.medrep.DoctorPostsActivity;
 import medrep.medrep.DoctorsMyContactActivity;
 import medrep.medrep.GroupMoreActivity;
 import medrep.medrep.LoginActivity;
@@ -79,6 +83,7 @@ import medrep.medrep.SearchForDrugsActivity;
 import medrep.medrep.ShareActivity;
 import medrep.medrep.SuggestedContactsActivity;
 import medrep.medrep.TransformActivity;
+import medrep.medrep.TransformDetailActivity;
 
 /**
  * Created by GunaSekhar on 25-06-2016.
@@ -86,6 +91,7 @@ import medrep.medrep.TransformActivity;
 public class CommonAdapter extends BaseAdapter {
 
     private JSONArray result;
+    private JSONArray tempJsonArray;
     private Context context;
     private JSONObject resultObject;
     private String titleListView;
@@ -160,6 +166,7 @@ public class CommonAdapter extends BaseAdapter {
                 System.out.println(imageUrl);
                 Button image = (Button) convertView.findViewById(R.id.groupIcon);
                 String groupName = object.getString("group_name");
+                image.setBackgroundResource(R.drawable.res_img);
                 if(!imageUrl.equals(null)) {
                     LoadImage imageLoadFromServer = new LoadImage(image);
                     imageLoadFromServer.execute(imageUrl);
@@ -232,6 +239,7 @@ public class CommonAdapter extends BaseAdapter {
                 TextView name  = (TextView)convertView.findViewById(R.id.name);
                 name.setText("Dr. " + doctorName);
                 Button groupIcon = (Button) convertView.findViewById(R.id.groupIcon);
+                groupIcon.setBackgroundResource(R.drawable.res_img);
                 if(!doctorImage.equals(null)) {
                     byte[] decodedString = Base64.decode(doctorImage, Base64.DEFAULT);
                     Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
@@ -270,7 +278,7 @@ public class CommonAdapter extends BaseAdapter {
                 String lastName = object.getString("lastName");
                 String fullName = firstName +" "+ lastName;
                 TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
-                doctorName.setText("Dr. "+ fullName);
+                doctorName.setText(fullName);
                 String doctotSpecialist = object.getString("therapeuticArea");
                 TextView specialistIn = (TextView)convertView.findViewById(R.id.specialistIn);
                 specialistIn.setText(doctotSpecialist);
@@ -304,7 +312,7 @@ public class CommonAdapter extends BaseAdapter {
                 String lastName = object.getString("lastName");
                 String fullName = firstName + " " + lastName;
                 TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
-                doctorName.setText("Dr. " + fullName);
+                doctorName.setText(fullName);
                 String specalist = object.getString("therapeuticDesc");
                 TextView doctorSpecialist = (TextView)convertView.findViewById(R.id.doctorSpecialist);
                 doctorSpecialist.setText(specalist);
@@ -517,7 +525,8 @@ public class CommonAdapter extends BaseAdapter {
                 Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
                 BitmapDrawable bdrawable = new BitmapDrawable(context.getResources(),decodedByte);
                 Button groupIcon = (Button) convertView.findViewById(R.id.groupIcon);
-                groupIcon.setBackground(bdrawable);
+                groupIcon.setBackgroundResource(R.drawable.res_img);
+//                groupIcon.setBackground(bdrawable);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -626,25 +635,93 @@ public class CommonAdapter extends BaseAdapter {
             int[] images = {R.drawable.news1, R.drawable.news2, R.drawable.news3, R.drawable.news4, R.drawable.news1, R.drawable.news2, R.drawable.news3, R.drawable.news4};
             convertView = mInflater.inflate(R.layout.doctor_group_custom_list_view, null);
             Button groupIcon = (Button) convertView.findViewById(R.id.groupIcon);
+            ImageView videoThumbnail = (ImageView)convertView.findViewById(R.id.videoThumbnail);
             groupIcon.getLayoutParams().width = 160;
             groupIcon.getLayoutParams().height = 140;
-            // groupIcon.setBackground(context.getResources().getDrawable(R.drawable.white_background_rounded_corners));
-            groupIcon.setBackgroundResource(images[0]);
+            LinearLayout listitemLV = (LinearLayout)convertView.findViewById(R.id.listitemLV);
 
-            if(position == 1 || position == 3 || position == 7) {
-                ImageView videoThumbnail = (ImageView)convertView.findViewById(R.id.videoThumbnail);
-                videoThumbnail.setVisibility(View.VISIBLE);
-            } else if(position == 2) {
-                groupIcon.setBackgroundResource(R.drawable.pdf);
-            }
+//            groupIcon.setBackgroundResource(R.drawable.res_img);
+            // groupIcon.setBackground(context.getResources().getDrawable(R.drawable.white_background_rounded_corners));
+//            groupIcon.setBackgroundResource(images[0]);
+
+
+
+//            if(position == 1 || position == 3 || position == 7) {
+//                videoThumbnail.setVisibility(View.VISIBLE);
+//            } else if(position == 2) {
+//                groupIcon.setBackgroundResource(R.drawable.pdf);
+//            }
+//            final Intent intent = new Intent(context, TransformDetailActivity.class);
             try {
-                JSONObject object = result.getJSONObject(position);
-                String title = object.getString("title");
-                TextView name  = (TextView)convertView.findViewById(R.id.name);
-                name.setText(title);
-                String desc = object.getString("tagDesc");
-                TextView description = (TextView)convertView.findViewById(R.id.groupDescription);
-                description.setText(Html.fromHtml(desc));
+//                final JSONObject object = result.getJSONObject(position);
+//                convertView.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        try{
+//                            String title = object.getString("title");
+//                            String description = object.getString("tagDesc");
+//
+//                            if(object.has("innerImgUrl")){
+//                                if(!object.getString("innerImgUrl").equals("null")){
+//                                    //                        videoUrl = object.getString("videoUrl");
+//                                    intent.putExtra("innerImgUrl", object.getString("innerImgUrl"));
+//                                }
+//                            }
+//                            if(object.has("videoUrl")){
+//                                if(!object.getString("videoUrl").equals("null")){
+//                                    //                        videoUrl = object.getString("videoUrl");
+//                                    intent.putExtra("videoUrl", object.getString("videoUrl"));
+//                                }
+//                            }
+//
+//                            intent.putExtra("description", description);
+//                            intent.putExtra("newsTitle", title);
+//
+//                            context.startActivity(intent);
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//                    }
+//                });
+
+
+            JSONObject object = result.getJSONObject(position);
+//                if(object.isNull("Empty")){
+                    String title = object.getString("title");
+                    TextView name  = (TextView)convertView.findViewById(R.id.name);
+                    name.setText(title);
+                    String desc = object.getString("tagDesc");
+                    TextView description = (TextView)convertView.findViewById(R.id.groupDescription);
+                    description.setText(Html.fromHtml(desc));
+                    TextView source = (TextView)convertView.findViewById(R.id.source);
+                    String sourceName = null;
+                    String coverImgUrl = null;
+                    if(object.has("sourceName")){
+                        sourceName = object.getString("sourceName");
+                    }
+                    String articalDate = object.getString("createdOn");
+                    String[] dateTime = new String[0];
+                    if(articalDate.contains("T")){
+                        dateTime = articalDate.split("T");
+                    }
+
+                    if(object.has("coverImgUrl")){
+                        coverImgUrl = object.getString("coverImgUrl");
+                    }
+
+                    if(coverImgUrl == null) {
+                        groupIcon.setBackgroundResource(R.drawable.res_img);
+                    } else {
+                        LoadImage loadImage = new LoadImage(groupIcon);
+                        loadImage.execute(coverImgUrl);
+                    }
+
+                    source.setText("SOURCE : "+sourceName+", "+dateTime[0]+" "+dateTime[1]);
+
+//                }else {
+//                    listitemLV.setVisibility(View.GONE);
+//                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -686,6 +763,10 @@ public class CommonAdapter extends BaseAdapter {
                     TextView shareCount = (TextView)convertView.findViewById(R.id.shareCount);
                     String share = object.getString("share_count");
                     shareCount.setText(share);
+                long postedOn = object.getLong("posted_on");
+                String dateTime = getDate(postedOn);
+                TextView sharedMessageDate = (TextView)convertView.findViewById(R.id.shared_message_date);
+                sharedMessageDate.setText(dateTime);
                 final int finalPosition = position;
                 likeLayout.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -770,7 +851,56 @@ public class CommonAdapter extends BaseAdapter {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        } else if( context instanceof ProfileViewActivity) {
+        } else if(context instanceof DoctorPostsActivity) {
+
+            try {
+                JSONObject object = result.getJSONObject(position);
+                String doctorTitle = object.getString("doctor_Name");
+                //if(!doctorTitle.equals("null")) {
+                convertView = mInflater.inflate(R.layout.custom_doctor_contact_list_view, null);
+                TextView doctorName = (TextView)convertView.findViewById(R.id.doctorName);
+                doctorName.setText(doctorTitle);
+                Button doctorImage = (Button)convertView.findViewById(R.id.doctorImage);
+                String doctorPic = object.getString("displayPicture");
+                if(doctorPic == null) {
+                    doctorImage.setText(doctorTitle.charAt(0));
+                } else {
+                    LoadImage loadImage = new LoadImage(doctorImage);
+                    loadImage.execute(doctorPic);
+                }
+                TextView doctorStatus = (TextView)convertView.findViewById(R.id.doctorStatus);
+                String message = object.getString("short_desc");
+                if(!message.equals("null")) {
+                    doctorStatus.setText(message);
+                } else {
+                    doctorStatus.setText("");
+                }
+
+                ImageView doctorImageShare = (ImageView) convertView.findViewById(R.id.doctorImageShare);
+                //doctorImageShare.setVisibility(View.GONE);
+                String url = object.getString("url");
+//                System.out.println("Iamge url" + url.getClass().getName());
+                if(url.length() > 10) {
+                    doctorImageShare.setVisibility(View.VISIBLE);
+                    LoadImage loadImage = new LoadImage(doctorImageShare);
+                    loadImage.execute(url);
+                } else {
+                    doctorImageShare.setVisibility(View.GONE);
+                }
+
+                LinearLayout statistics = (LinearLayout)convertView.findViewById(R.id.statistics);
+                statistics.setVisibility(View.GONE);
+                long postedOn = object.getLong("posted_on");
+                String dateTime = getDate(postedOn);
+                TextView sharedMessageDate = (TextView)convertView.findViewById(R.id.shared_message_date);
+                sharedMessageDate.setVisibility(View.VISIBLE);
+                sharedMessageDate.setText(dateTime);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        else if( context instanceof ProfileViewActivity) {
             convertView = mInflater.inflate(R.layout.custom_profile_list_view, null);
             TextView specialist = (TextView)convertView.findViewById(R.id.specialist);
             ImageView addData = (ImageView)convertView.findViewById(R.id.addData);
@@ -1176,6 +1306,29 @@ public class CommonAdapter extends BaseAdapter {
         return convertView;
     }
 
+
+    public void filter(CharSequence searchString){
+        tempJsonArray = new JSONArray();
+        try{
+            if(searchString.length() == 0){
+                tempJsonArray = result;
+            }else {
+                for(int i=1; i<result.length(); i++){
+                    JSONObject jsonObject = result.getJSONObject(i);
+                    if(jsonObject.getString("title").contains(searchString)){
+                        tempJsonArray.put(jsonObject);
+                    }
+//                else {
+//                    resArray.put(jsonObjectTemp);
+//                }
+                }
+            }
+            notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 //    private static Drawable LoadImageFromWebOperations(String url) {
 //        try {
 //            InputStream is = (InputStream) new URL(url).getContent();
@@ -1188,9 +1341,9 @@ public class CommonAdapter extends BaseAdapter {
 //    }
 
     private class LoadImage extends AsyncTask<String, String, Bitmap> {
-        private Button buttonImage;
+        private View buttonImage;
 
-        private LoadImage(Button buttonImage) {
+        private LoadImage(View buttonImage) {
             this.buttonImage = buttonImage;
         }
 
@@ -1261,4 +1414,11 @@ public class CommonAdapter extends BaseAdapter {
 //            view.setImageBitmap(map);
 //        }
 //    }
+
+    private String getDate(long time) {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(time);
+        String date = DateFormat.format("dd-MM-yyyy HH:mm:ss", cal).toString();
+        return date;
+    }
 }

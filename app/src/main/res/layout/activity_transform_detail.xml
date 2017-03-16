@@ -69,12 +69,13 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.3"
-            android:background="@drawable/news1"
+            android:scaleX="0.4"
+            android:background="@drawable/res_img"
             android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center">
             <ImageView
                 android:id="@+id/newsImage"
-                android:layout_width="100dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/video_thumbnail"
                 android:visibility="gone"
@@ -82,7 +83,7 @@
 
             <VideoView
                 android:id="@+id/videoView"
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:gravity="center_horizontal"/>
@@ -99,7 +100,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:scrollbars="vertical"
             android:fillViewport="true">
 
